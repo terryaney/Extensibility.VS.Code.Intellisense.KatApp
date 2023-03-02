@@ -2,6 +2,7 @@
   "name": "vs-code-intellisense-katapp",
   "displayName": "KAT Intellisense for KatApp Framework",
   "description": "",
+  "repository": "https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.76.0"
