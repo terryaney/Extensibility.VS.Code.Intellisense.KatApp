@@ -53,23 +53,25 @@ export function activate(context: vscode.ExtensionContext) {
 				case "v-ka-value": {
 					const availableProperties = [
 						{
-							name: "rbl-value.id",
-							snippet: "id",
-							documentation: "**rbl-value**\n\n \
-`v-ka-value` can simply be assigned to a `rbl-value` table [id](#https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-value). \n\n \
-`v-ka-value=\"nameFirst\" will return `value` column from `rbl-value` table row where `@id` column is `nameFirst`.
+							name: "rbl-value id",
+							snippet: "${1:id}",
+							documentation: "**rbl-value id**\n\n \
+`v-ka-value` can simply be assigned to a [`rbl-value` table id](#https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-value). \n\n \
+`v-ka-value=\"nameFirst\"` will return `value` column from `rbl-value` table row where `@id` column is `nameFirst`."
 						},
 						{
-							name: "rbl string",
-							snippet: "table.returrrrrrrrrrrrrrrnFieeeeeld.",
-							documentation: "**template**\n\nDocumentation for template goes here. \n\n \
-Second line of `code`."
+							name: ". Delimitted String",
+							snippet: "${1:table}.${2:keyValue}${3:.returnField}${4:.keyField}${5:.calcEngine}${6:.tab}",
+							documentation: "**`.` Delimitted String**\n\nDocumentation for template goes here. \n\n \
+`v-ka-value` can be configured to a [RBLe value selector](#https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-value) in the format of `table.keyValue.returnField.keyField.calcEngine.tab`. \n\n \
+`<!-- Shorthand syntax for example above. -->`\n````````<div v-ka-value=\"name-first\"></div>`."
 						},
 					];
 
 					return availableProperties.map(property => {
 						const item = new vscode.CompletionItem(property.name, vscode.CompletionItemKind.Property);
-						item.insertText = new vscode.SnippetString(property.snippet);
+						const snippet = new vscode.SnippetString(property.snippet);
+						item.insertText = snippet;
 						const documentation = new vscode.MarkdownString(property.documentation);
 						documentation.supportHtml = true;
 						documentation.supportThemeIcons = true;
