@@ -1,16 +1,14 @@
-# vs-code-intellisense-katapp README
+# VS Code Intellisense for KatApp Framework
 
 This is the README for KAT Intellisense for KatApp Framework extension. TBD...
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+1. Hovering over known KatApp and Vue directives providing more context help and links to additionall documentation.
+1. Code completion for `v-ka-*` and `v-*` attributes on HTML elements.
+1. Code completion for properties of `v-ka-*` directive models.
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+\!\[VS Code Intellisense\]\(images/vs-code-intellisense.gif\)
 
 ## Known Issues
 

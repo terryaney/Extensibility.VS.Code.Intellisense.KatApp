@@ -2,6 +2,16 @@
     "version": 1.1,
     "tags": [],
     "globalAttributes": [
+        {
+            "name": "@vue:mounted",
+            "description": {
+				"kind": "markdown",
+				"value": "Hook up event handlers when the current element is rendered (i.e. `@vue:mounted=\"handlers.someHandler\"`)."
+			},
+            "references": [
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on-element-lifecycle-events" }
+            ]
+        },
         { 
             "name": "v-ka-rbl-no-calc", 
             "description": {
@@ -167,7 +177,7 @@
             "name": "v-ka-value", 
             "description":{
 				"kind": "markdown",
-				"value": "Update element's innerHTML from designated RBLe Framework result.\n\nThe v-ka-value directive is responsible for assigning element HTML content from the calculation results. It is simply a shorthand syntax to use in place of `v-html` and [`rbl.value()`](#https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#iapplicationdatarblvalue).\n\nThe following statements are 'equivalent':\n\n`<div v-ka-value=\"nameFirst\"></div>`\n\n`<div v-ka-value=\"rbl-value.nameFirst\"></div>`\n\n`<div v-html=\"rbl.value( 'nameFirst' )\"></div>`\n\n`<div v-html=\"rbl.value( 'rbl-value', 'nameFirst' )\"></div>`"
+				"value": "Update element's innerHTML from designated RBLe Framework result.\n\nThe v-ka-value directive is responsible for assigning element HTML content from the calculation results. It is simply a shorthand syntax to use in place of `v-html` and [`rbl.value()`](#https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#iapplicationdatarblvalue).\n\nThe following statements are 'equivalent':\n\n`<div v-ka-value=\"nameFirst\"></div>`\n\n`<div v-ka-value=\"rbl-value.nameFirst\"></div>`\n\n`<div v-html=\"rbl.value( 'nameFirst' )\"></div>`\n\n`<div v-html=\"rbl.value( 'rbl-value', 'nameFirst' )\"></div>`\n\n\n\nThis directive is almost equivalent to `v-html=\"rbl.value(...)\"` with a single caveat. When the requested value does not exist in the calculation results, `rbl.value()` returns `undefined` and that would be rendered if the `v-html` directive was used. With `v-ka-value`, when the value does not exist, the element's current HTML is left unmodified."
 			},
             "references": [
                 { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-value" }

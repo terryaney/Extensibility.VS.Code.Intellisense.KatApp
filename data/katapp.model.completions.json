@@ -1,0 +1,794 @@
+{
+    "v-for": [
+        {
+            "name": "row in rbl.source",
+            "snippet": "${1:row} in rbl.source('${2:tableName}')",
+            "documentation": [
+                "**row in rbl.source**\n\nUse `v-for` to create templated content for each `row` in a RBLe Calculation result table."
+            ],
+            "references": [
+                {
+                    "name": "v-for",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-for"
+                },
+                {
+                    "name": "rbl.source",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#irblsource"
+                }
+            ]
+        },
+        {
+            "name": "row in filtered rbl.source",
+            "snippet": "${1:row} in rbl.source('${2:tableName}', r => r.${3:column} == '${4:value}' )",
+            "documentation": [
+                "**row in filtered rbl.source**\n\nUse `v-for` to create templated content for each `row` in a filtered RBLe Calculation result table.",
+                "The `r => r.column == 'value'` lamda predicate filters the table.  Every row in the table is passed through the lambda and is represented by the variable `r`."
+            ],
+            "references": [
+                {
+                    "name": "v-for",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-for"
+                },
+                {
+                    "name": "rbl.source",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#irblsource"
+                }
+            ]
+        },
+        {
+            "name": "(row, index) in rbl.source",
+            "snippet": "( ${1:row}, ${2:index} ) in rbl.source('${3:tableName}')",
+            "documentation": [
+                "**(row, index) in rbl.source**\n\nUse `v-for` to create templated content for each `row` in a RBLe Calculation result table.",
+                "The `(row, index)` signature instructs Vue to pass an zero based `index` for every row processed.  Useful to create unique IDs for each row or to do custom processing on the first row (when `index == 0`)."
+            ],
+            "references": [
+                {
+                    "name": "v-for",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-for"
+                },
+                {
+                    "name": "rbl.source",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#irblsource"
+                }
+            ]
+        }
+    ],
+    "v-ka-value": [
+        {
+            "name": "rbl-value id",
+            "snippet": "${1:id}",
+            "documentation": [
+                "**rbl-value id**\n\n`v-ka-value` can simply be assigned to a [`rbl-value` table id](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value).",
+                "v-ka-value=\"nameFirst\"` will return `value` column from `rbl-value` table row where `@id` column is `nameFirst`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-value",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value"
+                }
+            ]
+        },
+        {
+            "name": "rbl.value('idValue')",
+            "snippet": "rbl.value('${1:idValue}')",
+            "documentation": [
+                "**rbl.value()**\n\nReturn a `value` (undefined if not present) where `id=idValue` from rbl-value table in default CalcEngine/Tab.",
+                "`v-ka-value=\"rbl.value('name-first')\"`"
+            ],
+            "references": [
+                {
+                    "name": "v-ka-value",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value"
+                }
+            ]
+        },
+        {
+            "name": ". Delimitted String",
+            "snippet": "${1:table}.${2:keyValue}${3:.returnField}${4:.keyField}${5:.calcEngine}${6:.tab}",
+            "documentation": [
+                "**`.` Delimitted String**\n\n`v-ka-value` can be configured to a [RBLe value selector](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value) in the format of `table.keyValue.returnField.keyField.calcEngine.tab`.",
+                "`v-ka-value=\"name-first\"` : Table can be omitted, will use rbl-value.",
+                "`v-ka-value=\"options.coverage\"` : Return `value` from `options` table row where `id='coverage'`.",
+                "`v-ka-value=\"messages.add..type.BRD\"` : Return `value` from `messages` table row where `type='coverage'` from the BRD CalcEngine."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-value",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value"
+                },
+                {
+                    "name": "Samples",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-samples"
+                }
+            ]
+        },
+        {
+            "name": "rbl.value() Custom Table/CE/Tab",
+            "snippet": "rbl.value(${1:'table', }${2:'keyValue'}${3:, 'returnField'}${4:, 'keyField'}${5:, 'calcEngine'}${6:, 'tab'})",
+            "documentation": [
+                "**rbl.value()**\n\nReturn a value (undefined if not present) from results given parameters passed in. The CalcEngine key and ITabDef name can be passed in if not using the default CalcEngine and result tab.",
+                "`v-ka-value=\"rbl.value('options', 'coverage')\"` : Return `value` from `options` table row where `id='coverage'`.",
+                "`v-ka-value=\"rbl.value('messages', 'add', undefined, 'type', 'BRD')\"` : Return `value` from `messages` table row where `type='coverage'` from the BRD CalcEngine."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-value",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value"
+                },
+                {
+                    "name": "Samples",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#irblvalue"
+                }
+            ]
+        },
+        {
+            "name": "{} Model",
+            "snippet": "{\n\tkeyValue: '${1:key.with.dots}',\n\ttable: '${2:table}'\n}",
+            "documentation": [
+                "When using the `. Delimitted String` snippet, since . is the delimitter, it does not support any of the segments containing a period (i.e. the `keyValue` segment).",
+                "In this case, use the `{}` model syntax.  Additionally, the only required property is `keyValue`, so it can be easier to read if you only need to change the CalcEngine or Tab. If `table` is `undefined`, `rbl-value` will be used.",
+                "`v-ka-value=\"{ table: 'messages', keyValue: 'abc', ce: 'BRD' }\"`"
+            ],
+            "references": [
+                {
+                    "name": "v-ka-value Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                },
+                {
+                    "name": "Samples",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-samples"
+                }
+            ]
+        }
+    ],
+    "v-ka-value.model": [
+        {
+            "name": "table",
+            "snippet": "table: '${1:table}'",
+            "documentation": [
+                "The name of the RBLe Calculation table to pull the value from. By default, `rbl-value` will be used."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-value Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                }
+            ]
+        },
+        {
+            "name": "keyValue",
+            "snippet": "keyValue: '${1:keyValue}'",
+            "documentation": [
+                "The value to use as a 'key' when searching each `table` row's `keyField` column. By default, `id` will be used for `keyField`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-value Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                }
+            ]
+        },
+        {
+            "name": "ce",
+            "snippet": "ce: '${1:ceKey}'",
+            "documentation": [
+                "Specify which CalcEngine results to search (using the CalcEngine `key`, not the `name`. By default, the first CalcEngine in `rbl-config` will be used."
+            ],
+            "references": [
+                {
+                    "name": "CalcEngine Configuration",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#configuring-calcengines-and-template-files"
+                },
+                {
+                    "name": "v-ka-value Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                }
+            ]
+        },
+        {
+            "name": "returnField",
+            "snippet": "returnField: '${1:returnField}'",
+            "documentation": [
+                "The column name to return the value from. By default, `value` will be used."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-value Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                }
+            ]
+        },
+        {
+            "name": "keyField",
+            "snippet": "keyField: '${1:keyField}'",
+            "documentation": [
+                "The column name to search for the supplied `keyValue` value. By default, `id` will be used."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-value Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                }
+            ]
+        },
+        {
+            "name": "tab",
+            "snippet": "tab: '${1:tabName}'",
+            "documentation": [
+                "Specify the CalcEngine result tab to search . By default, the first result tab configured for the CalcEngine will be used."
+            ],
+            "references": [
+                {
+                    "name": "CalcEngine Configuration",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#configuring-calcengines-and-template-files"
+                },
+                {
+                    "name": "v-ka-value Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                }
+            ]
+        }
+    ],
+    "v-ka-resource": [
+        {
+            "name": "resource key",
+            "snippet": "${1:key}",
+            "documentation": [
+                "**key**\n\nSimply supply the resource key as the attribute value without { } model syntax."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-resource",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-resource"
+                }
+            ]
+        },
+        {
+            "name": "{} Model",
+            "snippet": "{ key: '${1:key}', ${2:token}: '${3:tokenValue}' }",
+            "documentation": [
+                "**v-ka-resource Model**\n\nUse the model syntax to specify a `key` and optionally, any `token` parameters that should be substituted into the resource string.",
+                "Each property assigned to the model will automatically replace `{{token}}` in the resource string, where `token` is the name of the model property."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-resource",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-resource"
+                }
+            ]
+        }
+    ],
+    "v-ka-resource.model": [
+        {
+            "name": "key",
+            "snippet": "key: '${1:key}'",
+            "documentation": [
+                "**key**\n\nThe key for the resource string."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-resource",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-resource"
+                }
+            ]
+        },
+        {
+            "name": "token",
+            "snippet": "${1:token}: '${2:tokenValue}'",
+            "documentation": [
+                "**token**\n\nAdditional property on the model to allow for token replacement in the resource string via `String.formatTokens`.",
+                "Each property assigned to the model will automatically replace `{{token}}` in the resource string, where `token` is the name of the model property."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-resource",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-resource"
+                }
+            ]
+        }
+    ],
+    "v-ka-input.input": [
+        {
+            "name": "name",
+            "snippet": "${1:name}",
+            "documentation": [
+                "**name**\n\nProvide a name to use in KatApp [state inputs](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#icalculationinputs)."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input"
+                }
+            ]
+        }
+    ],
+    "v-ka-input": [
+        {
+            "name": "name",
+            "snippet": "${1:name}",
+            "documentation": [
+                "**name**\n\nProvide a name to use in KatApp [state inputs](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#icalculationinputs)."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input"
+                }
+            ]
+        },
+        {
+            "name": "{} Model",
+            "snippet": "{ name: '${1:key}', template: '${2:template}' }",
+            "documentation": [
+                "**v-ka-input Model**\n\nUse the model syntax to specify a `name` and (usually) a `template` along with any other properties available to the `v-ka-input` model."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        }
+    ],
+    "v-ka-input.model": [
+        {
+            "name": "name",
+            "snippet": "${1:name}",
+            "documentation": [
+                "**name**\n\nProvide a name to use in KatApp [state inputs](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#icalculationinputs)."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "template",
+            "snippet": "template: '${1:template}'",
+            "documentation": [
+                "**template**\n\nThe template ID if a template will be used to render markup with the scope."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                },
+                {
+                    "name": "Input Templates",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#input-templates"
+                }
+            ]
+        },
+        {
+            "name": "type",
+            "snippet": "type: '${1:type}'",
+            "documentation": [
+                "**type**\n\nSet the type of the associated `HTMLInputElement` when the `tagName=INPUT` (vs `SELECT` or `TEXTAREA`).",
+                "If using `type: 'range'`, please see documentation regarding addition events and `ref` elements that must be supplied."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "value",
+            "snippet": "value: '${1:value}'",
+            "documentation": [
+                "**value**\n\nProvide a default value for the input. The value can also be provided via the `rbl-input.value` RBLe Framework calculation value.",
+                "Instead of a string literal, an item in the current 'scope' can be used as well (i.e. `value: item.property` )."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "label",
+            "snippet": "label: '${1:value}'",
+            "documentation": [
+                "**label**\n\nProvide a display label for the input. The value can also be provided via the `rbl-input.label` RBLe Framework calculation value.",
+                "Instead of a string literal, an item in the current 'scope' can be used as well (i.e. `label: item.property` )."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "placeHolder",
+            "snippet": "placeHolder: '${1:value}'",
+            "documentation": [
+                "**placeHolder**\n\nProvide a placeholder for the input. The value can also be provided via the `rbl-input.placeholder` RBLe Framework calculation value.",
+                "Instead of a string literal, an item in the current 'scope' can be used as well (i.e. `placeHolder: item.property` )."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "hideLabel",
+            "snippet": "hideLabel: ${1|true,false|}",
+            "documentation": [
+                "**hideLabel**\n\nProvide a value determining whether the display label should be hidden. The value can also be provided via a RBLe Framework calculation value. If `rbl-input.label == '-1'`, the label will be hidden.",
+                "Instead of a explicit `true` or `false` value, an item in the current 'scope' can be used as well (i.e. `hideLabel: item.boolProperty` )."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "prefix",
+            "snippet": "prefix: '${1:value}'",
+            "documentation": [
+                "**prefix**\n\nProvide a prefix for the input that could be displayed before the actual input (i.e. with Bootstrap `input-group` markup). The value can also be provided via the `rbl-input.prefix` RBLe Framework calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                },
+                {
+                    "name": "Bootstrap",
+                    "url": "https://getbootstrap.com/docs/5.2/forms/input-group/"
+                }
+            ]
+        },
+        {
+            "name": "suffix",
+            "snippet": "suffix: '${1:value}'",
+            "documentation": [
+                "**suffix**\n\nProvide a suffix for the input that could be displayed before the actual input (i.e. with Bootstrap `input-group` markup). The value can also be provided via the `rbl-input.suffix` RBLe Framework calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                },
+                {
+                    "name": "Bootstrap",
+                    "url": "https://getbootstrap.com/docs/5.2/forms/input-group/"
+                }
+            ]
+        },
+        {
+            "name": "maxLength",
+            "snippet": "maxLength: ${1:10}",
+            "documentation": [
+                "**maxLength**\n\nProvide a maxLength for the input that could be used to limit the length of textual inputs. The value can also be provided via the `rbl-input.max-length` RBLe Framework calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "displayFormat",
+            "snippet": "displayFormat: '${1:formatString}'",
+            "documentation": [
+                "**displayFormat**\n\nProvide a C# format string for the input to be used to format the value before displaying it. This is currently used when `type: 'range'`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                },
+                {
+                    "name": "Standard Number",
+                    "url": "https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings#standard-format-specifiers"
+                },
+                {
+                    "name": "Custom Number",
+                    "url": "https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-numeric-format-strings"
+                }
+            ]
+        },
+        {
+            "name": "min",
+            "snippet": "min: ${1|1,'1973-05-09'|}",
+            "documentation": [
+                "**min**\n\nProvide a min value for the input that could be used to limit the minimum allowed value on `date` or `range` inputs. The value can also be provided via the `rbl-input.min` RBLe Framework calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "max",
+            "snippet": "max: ${1|100,'2023-05-09'|}",
+            "documentation": [
+                "**max**\n\nProvide a max value for the input that could be used to limit the maximum allowed value on `date` or `range` inputs. The value can also be provided via the `rbl-input.max` RBLe Framework calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "step",
+            "snippet": "step: ${1:5}",
+            "documentation": [
+                "**step**\n\nProvide a step increment value for the input that could be used to control the value increments for `range` inputs. The value can also be provided via the `rbl-input.step` RBLe Framework calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "help",
+            "snippet": "help: { content: '${1:Sample help text to show in popover}'${2:, title: '${3:Sample Title}'} }",
+            "documentation": [
+                "**help**\n\nProvide the help configuration when the input displays contextual help."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "list",
+            "snippet": "list: [{key: '${1:key1}', text: '${2:text1'}, {key: '${3:key2}', text: '${4:text2}'}]",
+            "documentation": [
+                "**list**\n\nProvide a list for the input if it renders a list (i.e. SELECT, type=\"radio\", etc.) when building the control. The value can also be provided via the `rbl-input.list` RBLe Framework calculation value which points to a table containing columns of `key` an `text`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "mask",
+            "snippet": "mask: '(###) ###-####'",
+            "documentation": [
+                "**mask**\n\nProvide an input mask to apply during user input for text inputs. The value can also be provided via the `rbl-input.mask` RBLe Framework calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "keyboardRegex",
+            "snippet": "keyboardRegex: '${1|\\d,[A-Za-z],Custom|}'",
+            "documentation": [
+                "**keyboardRegex**\n\nProvide an regular expression to evaluate during user input for text inputs. This is to provide a simple, first line of defense against bad input, you can supply a regular expression to inputs via the keypressRegex(s) property that simply evaluates the keyboard input while the user types. Full client/server validation should still be performed, this is simply a UI aid to guard 99% of users. i.e. `\\d` would only allow numerical input and `[A-Za-z]` would only allow character input."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "uploadEndpoint",
+            "snippet": "uploadEndpoint: '${1:document-center/upload}'",
+            "documentation": [
+                "**uploadEndpoint**\n\nProvide an uploadEndpoint value for the input that could be used if `type=\"file\"` or if the template will render a 'file upload' UI component."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "clearOnUnmount",
+            "snippet": "clearOnUnmount: ${1|true,false|}",
+            "documentation": [
+                "**clearOnUnmount**\n\nIf true, when an input is removed from the DOM, the associated `state.inputs` value is also removed."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                },
+                {
+                    "name": "State Inputs",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#iapplicationdata-properties"
+                }
+            ]
+        },
+        {
+            "name": "isNoCalc",
+            "snippet": "isNoCalc: ${1|base => inputs.iNameFirst == 'Frank' \\|\\| base.isNoCalc,true|}",
+            "documentation": [
+                "**isNoCalc**\n\nProvide a simple boolean value or a delegate for the input that will be called to determine if an input should *not* trigger an RBLe Framework calculation. The value can also be provided via the `rbl-input.skip-calc` RBLe Framework calculation value.",
+                "**Note**: Additionally if any input or input ancestor has [v-ka-rbl-no-calc](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-rbl-no-calc) or [v-ka-rbl-exclude](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-rbl-exclude) in the class list, the calculation will not occur."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "isDisabled",
+            "snippet": "isDisabled: ${1|base => inputs.iNameFirst == 'Frank' \\|\\| base.isDisabled,true|}",
+            "documentation": [
+                "**isDisabled**\n\nProvide a simple boolean value or a delegate for the input that will be called to determine if an input should be disabled.",
+                "The value can also be provided via the `rbl-input.disabled` RBLe Framework calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "isDisplay",
+            "snippet": "isDisplay: ${1|base => inputs.iNameFirst == 'Frank' \\|\\| base.isDisplay,false|}",
+            "documentation": [
+                "**isDisplay**\n\nProvide a simple boolean value or a delegate for the input that will be called to determine if an input should be displayed.",
+                "The value can also be provided via the `rbl-input.display` RBLe Framework calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "iconHtml",
+            "snippet": "iconHtml: '${1:<a data-worksheet=\\'future-pay\\' role=\\'button\\' tabindex=\\'0\\' href=\\'#\\'><i class=\\'far fa-list-alt\\'></i></a>}'",
+            "documentation": [
+                "**iconHtml**\n\nProvide additional HTML Markup that could be rendered next to other icons that perform actions. For example, a range input may have an additional icon that should open up a 'worksheet' or `v-ka-modal`.",
+                "When using `iconHtml`, to hook up event handlers, the `@vue:mounted=\"handler.someHandler\"` will need to be used.  See documentation for 'Element Lifecycle Events' for more information."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                },
+                {
+                    "name": "Element Lifecycle Events",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on-element-lifecycle-events"
+                }
+            ]
+        },
+        {
+            "name": "uploadEndpoint",
+            "snippet": "uploadEndpoint: '${1:document-center/upload}'",
+            "documentation": [
+                "**uploadEndpoint**\n\nProvide an uploadEndpoint value for the input that could be used if `type=\"file\"` or if the template will render a 'file upload' UI component."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "clearOnUnmount",
+            "snippet": "clearOnUnmount: ${1|true,false|}",
+            "documentation": [
+                "**clearOnUnmount**\n\nIf true, when an input is removed from the DOM, the associated `state.inputs` value is also removed."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                },
+                {
+                    "name": "State Inputs",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#iapplicationdata-properties"
+                }
+            ]
+        },
+        {
+            "name": "ce",
+            "snippet": "ce: '${1:ceKey}'",
+            "documentation": [
+                "**ce**\n\nProvide the CalcEngine key if all the values that automatically pull from RBLe Framework calculation values should use a CalcEngine different from the default CalcEngine."
+            ],
+            "references": [
+                {
+                    "name": "CalcEngine Configuration",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#configuring-calcengines-and-template-files"
+                },
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "tab",
+            "snippet": "tab: '${1:tabName}'",
+            "documentation": [
+                "**tab**\n\nProvide the CalcEngine result tab name if all the values that automatically pull from RBLe Framework calculation values should use a tab name different from the default tab specified for the associated CalcEngine."
+            ],
+            "references": [
+                {
+                    "name": "CalcEngine Configuration",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#configuring-calcengines-and-template-files"
+                },
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        }
+    ],
+    "v-ka-input.help.model": [
+        {
+            "name": "content",
+            "snippet": "content: '${1:Help content}'",
+            "documentation": [
+                "**content**\n\n**Required**. HTML markup string to display when input help icon is clicked.  The value can also be provided via the `rbl-input.help` RBLe Calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "title",
+            "snippet": "title: '${1:Help Title}'",
+            "documentation": [
+                "**title**\n\nHTML markup string to use as the popover title when input help icon is clicked.  The value can also be provided via the `rbl-input.help-title` RBLe Calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "width",
+            "snippet": "width: ${1:250}",
+            "documentation": [
+                "**width**\n\nHow wide the Bootstrap popver should be when displayed.  Default value is 250 (pixels).  The value can also be provided via the `rbl-input.help-width` RBLe Calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                },
+                {
+                    "name": "Bootstrap Popover",
+                    "url": "https://getbootstrap.com/docs/5.0/components/popovers/#options"
+                }
+            ]
+        }
+    ]
+}
