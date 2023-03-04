@@ -12,10 +12,13 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 ## Getting Started
 
-1. Download the extension.
+1. [Download the extension](VS.Code.Intellisense.KatApp.vsix).
 1. Install the extension by pressing `CTRL+SHIFT+P` to bring up VS Code command pallette.  Type `VSIX` and choose `Extensions: Install from VSIX...`.
 
 ![Install from VSIX](images/install.png)
+
+3. Browse to the `VS.Code.Intellisense.KatApp.vsix` location and select it.
+4. Open a `.kaml` file and enjoy.
 
 ## Known Issues
 
