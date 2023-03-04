@@ -1,6 +1,8 @@
 # VS Code Intellisense for KatApp Framework
 
-This is the README for KAT Intellisense for KatApp Framework extension. TBD...
+A VS Code extension to provide intellisense and code completion suggestions for KatApp Framework features when editing `.kaml` files.
+
+\!\[VS Code Intellisense\]\(images/vs-code-intellisense.gif\)
 
 ## Features
 
@@ -8,7 +10,12 @@ This is the README for KAT Intellisense for KatApp Framework extension. TBD...
 1. Code completion for `v-ka-*` and `v-*` attributes on HTML elements.
 1. Code completion for properties of `v-ka-*` directive models.
 
-\!\[VS Code Intellisense\]\(images/vs-code-intellisense.gif\)
+## Getting Started
+
+1. Download the extension.
+1. Install the extension by pressing `CTRL+SHIFT+P` to bring up VS Code command pallette.  Type `VSIX` and choose `Extensions: Install from VSIX...`.
+
+[Install from VSIX](images/install.png)
 
 ## Known Issues
 
