@@ -12,7 +12,7 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 ## Getting Started
 
-1. [Download the extension](VS.Code.Intellisense.KatApp.vsix).
+1. [Download the extension](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/VS.Code.Intellisense.KatApp.vsix).
 1. Install the extension by pressing `CTRL+SHIFT+P` to bring up VS Code command pallette.  Type `VSIX` and choose `Extensions: Install from VSIX...`.
 
 ![Install from VSIX](images/install.png)
