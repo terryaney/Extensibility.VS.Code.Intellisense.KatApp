@@ -1,6 +1,6 @@
 # VS Code Intellisense for KatApp Framework
 
-A VS Code extension to provide intellisense and code completion suggestions for KatApp Framework features when editing `.kaml` files.  To get full syntax highlighting within the KatApp/Vue directives, the [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) extension is suggested.
+A VS Code extension to provide intellisense and code completion suggestions for [KatApp Framework](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md) features when editing `.kaml` files.  To get full syntax highlighting within the KatApp/Vue directives, the [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) extension is suggested.
 
 ## Features
 
