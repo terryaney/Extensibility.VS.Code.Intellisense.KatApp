@@ -9,11 +9,11 @@
             "references": [
                 {
                     "name": "v-for",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-for"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-for"
                 },
                 {
                     "name": "rbl.source",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#irblsource"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#irblsource"
                 }
             ]
         },
@@ -27,11 +27,11 @@
             "references": [
                 {
                     "name": "v-for",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-for"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-for"
                 },
                 {
                     "name": "rbl.source",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#irblsource"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#irblsource"
                 }
             ]
         },
@@ -45,11 +45,11 @@
             "references": [
                 {
                     "name": "v-for",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-for"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-for"
                 },
                 {
                     "name": "rbl.source",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#irblsource"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#irblsource"
                 }
             ]
         }
@@ -59,13 +59,13 @@
             "name": "rbl-value id",
             "snippet": "${1:id}",
             "documentation": [
-                "**rbl-value id**\n\n`v-ka-value` can simply be assigned to a [`rbl-value` table id](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value).",
+                "**rbl-value id**\n\n`v-ka-value` can simply be assigned to a [`rbl-value` table id](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value).",
                 "v-ka-value=\"nameFirst\"` will return `value` column from `rbl-value` table row where `@id` column is `nameFirst`."
             ],
             "references": [
                 {
                     "name": "v-ka-value",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value"
                 }
             ]
         },
@@ -79,7 +79,7 @@
             "references": [
                 {
                     "name": "v-ka-value",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value"
                 }
             ]
         },
@@ -87,25 +87,23 @@
             "name": ". Delimitted String",
             "snippet": "${1:table}.${2:keyValue}${3:.returnField}${4:.keyField}${5:.calcEngine}${6:.tab}",
             "documentation": [
-                "**`.` Delimitted String**\n\n`v-ka-value` can be configured to a [RBLe value selector](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value) in the format of `table.keyValue.returnField.keyField.calcEngine.tab`.",
-                "`v-ka-value=\"name-first\"` : Table can be omitted, will use rbl-value.",
-                "`v-ka-value=\"options.coverage\"` : Return `value` from `options` table row where `id='coverage'`.",
-                "`v-ka-value=\"messages.add..type.BRD\"` : Return `value` from `messages` table row where `type='coverage'` from the BRD CalcEngine."
+                "**`.` Delimitted String**\n\n`v-ka-value` can be configured to a [RBLe value selector](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value) in the format of `table.keyValue.returnField.keyField.calcEngine.tab`.",
+                "```html\n<!-- Table can be omitted, will use rbl-value -->\n<div v-ka-value=\"name-first\">\n<!--\nReturn 'value' from 'options' table row\nwhere id='coverage'\n-->\n<div v-ka-value=\"options.coverage\">\n<!--\nReturn 'value' from 'messages' table row\nwhere type='coverage' from the BRD CalcEngine\n-->\n<div v-ka-value=\"messages.add..type.BRD\"> \n```"
             ],
             "references": [
                 {
                     "name": "v-ka-value",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value"
                 },
                 {
                     "name": "Samples",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-samples"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value-samples"
                 }
             ]
         },
         {
             "name": "rbl.value() Custom Table/CE/Tab",
-            "snippet": "rbl.value(${1:'table', }${2:'keyValue'}${3:, 'returnField'}${4:, 'keyField'}${5:, 'calcEngine'}${6:, 'tab'})",
+            "snippet": "rbl.value(${1:'${2:table}'}, '${3:keyValue}', ${4:'${5:returnField}'}${6:, ${7:'${8:keyField}'}}${9:, ${10:'${11:calcEngine}'}}${12:, '${13:tab}'})",
             "documentation": [
                 "**rbl.value()**\n\nReturn a value (undefined if not present) from results given parameters passed in. The CalcEngine key and ITabDef name can be passed in if not using the default CalcEngine and result tab.",
                 "`v-ka-value=\"rbl.value('options', 'coverage')\"` : Return `value` from `options` table row where `id='coverage'`.",
@@ -114,11 +112,11 @@
             "references": [
                 {
                     "name": "v-ka-value",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value"
                 },
                 {
                     "name": "Samples",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#irblvalue"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#irblvalue"
                 }
             ]
         },
@@ -133,11 +131,11 @@
             "references": [
                 {
                     "name": "v-ka-value Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value-model-segments-with-periods"
                 },
                 {
                     "name": "Samples",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-samples"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value-samples"
                 }
             ]
         }
@@ -152,7 +150,7 @@
             "references": [
                 {
                     "name": "v-ka-value Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value-model-segments-with-periods"
                 }
             ]
         },
@@ -165,7 +163,7 @@
             "references": [
                 {
                     "name": "v-ka-value Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value-model-segments-with-periods"
                 }
             ]
         },
@@ -178,11 +176,11 @@
             "references": [
                 {
                     "name": "CalcEngine Configuration",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#configuring-calcengines-and-template-files"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files"
                 },
                 {
                     "name": "v-ka-value Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value-model-segments-with-periods"
                 }
             ]
         },
@@ -195,7 +193,7 @@
             "references": [
                 {
                     "name": "v-ka-value Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value-model-segments-with-periods"
                 }
             ]
         },
@@ -208,7 +206,7 @@
             "references": [
                 {
                     "name": "v-ka-value Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value-model-segments-with-periods"
                 }
             ]
         },
@@ -221,11 +219,11 @@
             "references": [
                 {
                     "name": "CalcEngine Configuration",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#configuring-calcengines-and-template-files"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files"
                 },
                 {
                     "name": "v-ka-value Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-value-model-segments-with-periods"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value-model-segments-with-periods"
                 }
             ]
         }
@@ -240,7 +238,7 @@
             "references": [
                 {
                     "name": "v-ka-resource",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-resource"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-resource"
                 }
             ]
         },
@@ -254,7 +252,7 @@
             "references": [
                 {
                     "name": "v-ka-resource",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-resource"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-resource"
                 }
             ]
         }
@@ -269,7 +267,7 @@
             "references": [
                 {
                     "name": "v-ka-resource",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-resource"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-resource"
                 }
             ]
         },
@@ -283,7 +281,7 @@
             "references": [
                 {
                     "name": "v-ka-resource",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-resource"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-resource"
                 }
             ]
         }
@@ -293,12 +291,12 @@
             "name": "name",
             "snippet": "${1:name}",
             "documentation": [
-                "**name**\n\nProvide a name to use in KatApp [state inputs](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#icalculationinputs)."
+                "**name**\n\nProvide a name to use in KatApp [state inputs](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#icalculationinputs)."
             ],
             "references": [
                 {
                     "name": "v-ka-input",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input"
                 }
             ]
         }
@@ -308,25 +306,25 @@
             "name": "name",
             "snippet": "${1:name}",
             "documentation": [
-                "**name**\n\nProvide a name to use in KatApp [state inputs](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#icalculationinputs)."
+                "**name**\n\nProvide a name to use in KatApp [state inputs](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#icalculationinputs)."
             ],
             "references": [
                 {
                     "name": "v-ka-input",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input"
                 }
             ]
         },
         {
             "name": "{} Model",
-            "snippet": "{ name: '${1:key}', template: '${2:template}' }",
+            "snippet": "{\r\tname: '${1:key}',\r\ttemplate: '${2:template}'\r}",
             "documentation": [
                 "**v-ka-input Model**\n\nUse the model syntax to specify a `name` and (usually) a `template` along with any other properties available to the `v-ka-input` model."
             ],
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         }
@@ -336,12 +334,12 @@
             "name": "name",
             "snippet": "${1:name}",
             "documentation": [
-                "**name**\n\nProvide a name to use in KatApp [state inputs](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#icalculationinputs)."
+                "**name**\n\nProvide a name to use in KatApp [state inputs](#https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#icalculationinputs)."
             ],
             "references": [
                 {
                     "name": "v-ka-input",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -354,7 +352,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 },
                 {
                     "name": "Input Templates",
@@ -364,7 +362,7 @@
         },
         {
             "name": "type",
-            "snippet": "type: '${1:type}'",
+            "snippet": "type: '${1|radio,checkbox,text,date,range|}'",
             "documentation": [
                 "**type**\n\nSet the type of the associated `HTMLInputElement` when the `tagName=INPUT` (vs `SELECT` or `TEXTAREA`).",
                 "If using `type: 'range'`, please see documentation regarding addition events and `ref` elements that must be supplied."
@@ -372,7 +370,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -386,7 +384,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -400,7 +398,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -414,7 +412,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -428,7 +426,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -441,7 +439,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 },
                 {
                     "name": "Bootstrap",
@@ -458,7 +456,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 },
                 {
                     "name": "Bootstrap",
@@ -475,7 +473,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -488,7 +486,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 },
                 {
                     "name": "Standard Number",
@@ -509,7 +507,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -522,7 +520,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -535,7 +533,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -543,12 +541,38 @@
             "name": "help",
             "snippet": "help: { content: '${1:Sample help text to show in popover}'${2:, title: '${3:Sample Title}'} }",
             "documentation": [
-                "**help**\n\nProvide the help configuration when the input displays contextual help."
+                "**help**\n\nProvide the help configuration when the input displays contextual help. The values can also be provided via the `rbl-input.help`, `rbl-input.help-title`, and `rbl-input.help-width` RBLe Framework calculation values."
             ],
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "css",
+            "snippet": "css: { container: '${1:class1 class2}'${2:, input: '${3:class1 class2}'} }",
+            "documentation": [
+                "**css**\n\nProvide the CSS configuration to apply to the rendered `HTMLElement` considered the 'container' or 'input' within a template rendered input."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "events",
+            "snippet": "events: {\n\t${1:${2:change}: e => ${3:{ console.log( 'Custom delegate; or can assign handlers.someHandler' ); \\}}${4:,\n\t'click.prevent': e => ${5:handlers.someEvent(e)} }}\n}",
+            "documentation": [
+                "**events**\n\nProvide a javascript object where each property is an event handler. These event handlers will automatically be added to HTMLInputElements based on the property name. The property name follows the same patterns as the [v-on](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on) directive (including [modifiers](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on-modifiers))."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -561,7 +585,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -574,7 +598,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -587,20 +611,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
-                }
-            ]
-        },
-        {
-            "name": "uploadEndpoint",
-            "snippet": "uploadEndpoint: '${1:document-center/upload}'",
-            "documentation": [
-                "**uploadEndpoint**\n\nProvide an uploadEndpoint value for the input that could be used if `type=\"file\"` or if the template will render a 'file upload' UI component."
-            ],
-            "references": [
-                {
-                    "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -613,7 +624,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 },
                 {
                     "name": "State Inputs",
@@ -626,12 +637,12 @@
             "snippet": "isNoCalc: ${1|base => inputs.iNameFirst == 'Frank' \\|\\| base.isNoCalc,true|}",
             "documentation": [
                 "**isNoCalc**\n\nProvide a simple boolean value or a delegate for the input that will be called to determine if an input should *not* trigger an RBLe Framework calculation. The value can also be provided via the `rbl-input.skip-calc` RBLe Framework calculation value.",
-                "**Note**: Additionally if any input or input ancestor has [v-ka-rbl-no-calc](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-rbl-no-calc) or [v-ka-rbl-exclude](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-rbl-exclude) in the class list, the calculation will not occur."
+                "**Note**: Additionally if any input or input ancestor has [v-ka-rbl-no-calc](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-rbl-no-calc) or [v-ka-rbl-exclude](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-rbl-exclude) in the class list, the calculation will not occur."
             ],
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -645,7 +656,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -659,7 +670,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -673,7 +684,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 },
                 {
                     "name": "Element Lifecycle Events",
@@ -690,7 +701,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -703,7 +714,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 },
                 {
                     "name": "State Inputs",
@@ -720,11 +731,11 @@
             "references": [
                 {
                     "name": "CalcEngine Configuration",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#configuring-calcengines-and-template-files"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files"
                 },
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -737,11 +748,11 @@
             "references": [
                 {
                     "name": "CalcEngine Configuration",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#configuring-calcengines-and-template-files"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files"
                 },
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         }
@@ -756,7 +767,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -769,7 +780,7 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 }
             ]
         },
@@ -782,11 +793,566 @@
             "references": [
                 {
                     "name": "v-ka-input Model",
-                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.Vue.md#v-ka-input-model"
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
                 },
                 {
                     "name": "Bootstrap Popover",
                     "url": "https://getbootstrap.com/docs/5.0/components/popovers/#options"
+                }
+            ]
+        }
+    ],
+    "v-ka-input.css.model": [
+        {
+            "name": "container",
+            "snippet": "container: '${1:container css}'",
+            "documentation": [
+                "**container**\n\nSpace delimitted list of CSS classes to apply to the 'container' (container is determined by the host framework when they create a template for inputs)."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
+                }
+            ]
+        },
+        {
+            "name": "input",
+            "snippet": "input: '${1:input css}'",
+            "documentation": [
+                "**input**\n\nSpace delimitted list of CSS classes to apply to the 'input' (input is determined by the host framework when they create a template for inputs)."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-model"
+                }
+            ]
+        }
+    ],
+    "v-ka-input.events.model": [
+        {
+            "name": "handler",
+            "snippet": "${1:eventName}: e => handlers.${2:handlerName}${3:(e)}",
+            "documentation": [
+                "**event**\n\nEvent handler automatically added to the HTMLInputElement based on the property name. The property name follows the same patterns as the [v-on](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on) directive (including [modifiers](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on-modifiers))."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input"
+                }
+            ]
+        },
+        {
+            "name": "async handler",
+            "snippet": "${1:eventName}: async e => await handlers.${2:handlerNameAsync}${3:(e)}",
+            "documentation": [
+                "**event**\n\nEvent handler automatically added to the HTMLInputElement based on the property name. The property name follows the same patterns as the [v-on](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on) directive (including [modifiers](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on-modifiers))."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input"
+                }
+            ]
+        },
+        {
+            "name": "delegate",
+            "snippet": "${1:eventName}: e => {\n\t${2:console.log('Inside ${1}');}\n}",
+            "documentation": [
+                "**event**\n\nEvent handler automatically added to the HTMLInputElement based on the property name. The property name follows the same patterns as the [v-on](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on) directive (including [modifiers](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on-modifiers))."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input"
+                }
+            ]
+        },
+        {
+            "name": "modifier",
+            "snippet": "'${1:eventName}.${2|stop,prevent,capture,self,once,left,right,middle,passive|}': e => handlers.${3:handlerName}${4:(e)}",
+            "documentation": [
+                "**event**\n\nEvent handler automatically added to the HTMLInputElement based on the property name. The property name follows the same patterns as the [v-on](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on) directive (including [modifiers](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on-modifiers))."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input"
+                }
+            ]
+        }
+    ],
+    "v-ka-input-group": [
+        {
+            "name": "{} Model",
+            "snippet": "{\n\tnames: ['${1:name1}', '${2:name2}'],\n\ttype: '${3|radio,checkbox,text,date,range|}',\n\ttemplate: '${4:template}'\n}",
+            "documentation": [
+                "**v-ka-input-group Model**\n\nUse the model syntax to specify `names`, `type` and a `template` along with any other properties available to the `v-ka-input-group` model."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        }
+    ],
+    "v-ka-input-group.model": [
+        {
+            "name": "names",
+            "snippet": "names: ['${1:name1}', '${2:name2}']",
+            "documentation": [
+                "**names**\n\nThe array of string names representing each input in the gruop. In RBLe Framework, input names start with lower case `i` and then the remaing part(s) is/are Pascal Case (i.e. ['iFirstName', 'iFirstName2'])."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "template",
+            "snippet": "template: '${1:template}'",
+            "documentation": [
+                "**template**\n\nReturn the [template](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#html-content-template-elements) ID to be used to render group markup with the scope. Unlike the v-ka-input model, here, template is required."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "type",
+            "snippet": "type: '${1|radio,checkbox,text,date,range|}'",
+            "documentation": [
+                "**type**\n\nWhen the associated group of `HTMLInputElement`s `tageName=INPUT` (vs `SELECT` or `TEXTAREA`), you can provide a type.",
+                "If using `type: 'range'`, please see documentation regarding addition events and `ref` elements that must be supplied."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "values",
+            "snippet": "values: ['${1:value1}', '${2:value2}']",
+            "documentation": [
+                "**values**\n\nThe default values for the input group scope can be provided as string literals or from of the current scope. The values can also be provided via the the `rbl-input.value` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "labels",
+            "snippet": "labels: ['${1:label1}', '${2:label2}']",
+            "documentation": [
+                "**labels**\n\nThe labels to use for the input group scope can be provided as string literals or from the current scope. The values can also be provided via the `rbl-input.label` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "placeHolders",
+            "snippet": "placeHolders: ${1|['placeholder1'\\, 'placeholder2'],'placeholder'|}",
+            "documentation": [
+                "**placeHolders**\n\nThe placeHolders to use for the input group scope can be provided as an array of strings or simply a single string to use for all inputs in the group.  The values can be a string literal or value from the current scope. The values can also be provided via the `rbl-input.placeholder` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "hideLabels",
+            "snippet": "hideLabels: ${1|[false\\, true],true|}",
+            "documentation": [
+                "**hideLabels**\n\nAn array of boolean, or a single boolean to use for all inputs in the group, determining whether the labels should be hidden can be provided.  The values can be a boolean or value from the current scope. The inputs can also be hidden via the `rbl-input.label == -1` in the RBLe Framework calculation where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "prefixes",
+            "snippet": "prefixes: ${1|['$'\\, ''],'$'|}",
+            "documentation": [
+                "**prefixes**\n\nProvide prefixes for the inputs that could be displayed before the actual input (i.e. with Bootstrap `input-group` markup). The values can can be provided as an array of strings or a single string to use for all inputs in the group. The value can also be provided via the `rbl-input.prefix` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                },
+                {
+                    "name": "Bootstrap",
+                    "url": "https://getbootstrap.com/docs/5.2/forms/input-group/"
+                }
+            ]
+        },
+        {
+            "name": "suffixes",
+            "snippet": "suffixes: ${1|['%'\\, ''],'%'|}",
+            "documentation": [
+                "**suffixes**\n\nProvide suffixes for the inputs that could be displayed after the actual input (i.e. with Bootstrap `input-group` markup). The values can can be provided as an array of strings or a single string to use for all inputs in the group. The value can also be provided via the `rbl-input.prefix` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                },
+                {
+                    "name": "Bootstrap",
+                    "url": "https://getbootstrap.com/docs/5.2/forms/input-group/"
+                }
+            ]
+        },
+        {
+            "name": "maxLengths",
+            "snippet": "maxLengths: ${1|[50\\, 10],50|}",
+            "documentation": [
+                "**maxLengths**\n\nProvide maxLengths for the inputs that could be used to limit the length of textual inputs. The values can can be provided as an array of number or a single number to use for all inputs in the group. The value can also be provided via the `rbl-input.max-length` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "displayFormats",
+            "snippet": "displayFormats: ${1|['c2'\\, 'd'],'c2'|}",
+            "documentation": [
+                "**displayFormat**\n\nProvide displayFormats for the inputs that could format a value before displaying it. This is currently used when `type: 'range'`. The values can can be provided as an array of strings or a single string to use for all inputs in the group. The value can also be provided via the `rbl-input.display-format` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                },
+                {
+                    "name": "Standard Number",
+                    "url": "https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings#standard-format-specifiers"
+                },
+                {
+                    "name": "Custom Number",
+                    "url": "https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-numeric-format-strings"
+                }
+            ]
+        },
+        {
+            "name": "mins",
+            "snippet": "mins: ${1|[1\\, 5],5,['1973-05-09'\\, '1977-04-09'],'1973-05-09'|}",
+            "documentation": [
+                "**mins**\n\nProvide min values for the input that could be used to limit the minimum allowed value on `date` or `range` inputs. The values can can be provided as an array of strings (date), array of numbers (range), single string (date) or a single number (range) to use for all inputs in the group. The value can also be provided via the `rbl-input.min` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "maxes",
+            "snippet": "maxes: ${1|[1\\, 5],5,['2038-05-09'\\, '2042-04-09'],'2038-05-09'|}",
+            "documentation": [
+                "**maxes**\n\nProvide max values for the input that could be used to limit the maximum allowed value on `date` or `range` inputs. The values can can be provided as an array of strings (date), array of numbers (range), single string (date) or a single number (range) to use for all inputs in the group. The value can also be provided via the `rbl-input.max` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "steps",
+            "snippet": "steps: ${1|[5\\,1],5|}",
+            "documentation": [
+                "**steps**\n\nProvide step increment values for the inputs that could be used to control the value increments for `range` inputs. The values can can be provided as an array of strings or a single string to use for all inputs in the group. The value can also be provided via the `rbl-input.step` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "helps",
+            "snippet": "helps: ${1|[{ title: 'Title 1'\\, content: 'Content 1'}\\, { title: 'Title 2'\\, content: 'Content 2'}],{ title: 'Title 1'\\, content: 'Content 1'}|}",
+            "documentation": [
+                "**helps**\n\nProvide the help configuration when the inputs display contextual help. The values can can be provided as an array of or a single instance of `{ title?: string; content: string; width?: number; }` to use for all inputs in the group. The value can also be provided via the `rbl-input.help`, `rbl-input.help-title`, and `rbl-input.help-width` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "css",
+            "snippet": "css: ${1|[{ container: 'class1'\\, input: 'class1'}\\, { container: 'class2'\\, input: 'class2'}],{ container: 'class1'\\, input: 'class1'}|}",
+            "documentation": [
+                "**css**\n\nProvide the CSS configuration to apply to the rendered `HTMLElements` considered the 'containers' or 'inputs' within a template rendered input.  The values can can be provided as an array of or a single instance of `{ container?: string; input?: string; }` to use for all inputs in the group."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "events",
+            "snippet": "\n\tevents: {\n\t\t${1:${2:change}: e => ${3:{ console.log( 'Custom delegate; or can assign handlers.someHandler' ); \\}}${4:,\n\t\t'click.prevent': e => ${5:handlers.someEvent(e)} }}\n\t}\n",
+            "documentation": [
+                "**events**\n\nProvide a javascript object where each property is an event handler. These event handlers will automatically be added to HTMLInputElements based on the property name. The property name follows the same patterns as the [v-on](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on) directive (including [modifiers](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on-modifiers))."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "masks",
+            "snippet": "masks: '(###) ###-####'",
+            "documentation": [
+                "**mask**\n\nProvide an input mask to apply during user input for text inputs. The values can can be provided as an array of strings or a single string to use for all inputs in the group. The value can also be provided via the `rbl-input.mask` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "keyboardRegexes",
+            "snippet": "keyboardRegexes: ${1|['\\d'\\, '[A-Za-z]'],'\\d'}",
+            "documentation": [
+                "**keyboardRegexes**\n\nProvide a regular expression to evaluate during user input for text inputs. The values can can be provided as an array of strings or a single string to use for all inputs in the group. This is to provide a simple, first line of defense against bad input, you can supply a regular expression to inputs via the keypressRegex(s) property that simply evaluates the keyboard input while the user types. Full client/server validation should still be performed, this is simply a UI aid to guard 99% of users. i.e. `\\d` would only allow numerical input and `[A-Za-z]` would only allow character input."
+            ],
+           "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "isNoCalc",
+            "snippet": "isNoCalc: ${1|(index, base) => inputs.iNameFirst == 'Frank' \\|\\| base.isNoCalc(index),true|}",
+            "documentation": [
+                "**isNoCalc**\n\nProvide a simple boolean value or a delegate for the input that will be called to determine if an input should *not* trigger an RBLe Framework calculation. The value can also be provided via the `rbl-input.skip-calc` RBLe Framework calculation value.",
+                "**Note**: Additionally if any input or input ancestor has [v-ka-rbl-no-calc](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-rbl-no-calc) or [v-ka-rbl-exclude](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-rbl-exclude) in the class list, the calculation will not occur."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "isDisabled",
+            "snippet": "isDisabled: ${1|(index, base) => inputs.iNameFirst == 'Frank' \\|\\| base.isDisabled(index),true|}",
+            "documentation": [
+                "**isDisabled**\n\nProvide a simple boolean value or a delegate for the input that will be called to determine if an input should be disabled.",
+                "The value can also be provided via the `rbl-input.disabled` RBLe Framework calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "isDisplay",
+            "snippet": "isDisplay: ${1|(index, base) => inputs.iNameFirst == 'Frank' \\|\\| base.isDisplay(index),false|}",
+            "documentation": [
+                "**isDisplay**\n\nProvide a simple boolean value or a delegate for the input that will be called to determine if an input should be displayed.",
+                "The value can also be provided via the `rbl-input.display` RBLe Framework calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "clearOnUnmount",
+            "snippet": "clearOnUnmount: ${1|true,false|}",
+            "documentation": [
+                "**clearOnUnmount**\n\nIf true, when an input is removed from the DOM, the associated `state.inputs` value is also removed."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                },
+                {
+                    "name": "State Inputs",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#iapplicationdata-properties"
+                }
+            ]
+        },
+        {
+            "name": "ce",
+            "snippet": "ce: '${1:ceKey}'",
+            "documentation": [
+                "**ce**\n\nProvide the CalcEngine key if all the values that automatically pull from RBLe Framework calculation values should use a CalcEngine different from the default CalcEngine."
+            ],
+            "references": [
+                {
+                    "name": "CalcEngine Configuration",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files"
+                },
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "tab",
+            "snippet": "tab: '${1:tabName}'",
+            "documentation": [
+                "**tab**\n\nProvide the CalcEngine result tab name if all the values that automatically pull from RBLe Framework calculation values should use a tab name different from the default tab specified for the associated CalcEngine."
+            ],
+            "references": [
+                {
+                    "name": "CalcEngine Configuration",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files"
+                },
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        }
+   ],
+    "v-ka-input-group.help.model": [
+        {
+            "name": "content",
+            "snippet": "content: '${1:Help content}'",
+            "documentation": [
+                "**content**\n\n**Required**. HTML markup string to display when input help icon is clicked.  The value can also be provided via the `rbl-input.help` RBLe Calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "title",
+            "snippet": "title: '${1:Help Title}'",
+            "documentation": [
+                "**title**\n\nHTML markup string to use as the popover title when input help icon is clicked.  The value can also be provided via the `rbl-input.help-title` RBLe Calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "width",
+            "snippet": "width: ${1:250}",
+            "documentation": [
+                "**width**\n\nHow wide the Bootstrap popver should be when displayed.  Default value is 250 (pixels).  The value can also be provided via the `rbl-input.help-width` RBLe Calculation value."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                },
+                {
+                    "name": "Bootstrap Popover",
+                    "url": "https://getbootstrap.com/docs/5.0/components/popovers/#options"
+                }
+            ]
+        }
+    ],
+    "v-ka-input-group.events.model": [
+        {
+            "name": "handler",
+            "snippet": "${1:eventName}: e => handlers.${2:handlerName}${3:(e)}",
+            "documentation": [
+                "**event**\n\nEvent handler automatically added to the HTMLInputElement based on the property name. The property name follows the same patterns as the [v-on](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on) directive (including [modifiers](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on-modifiers))."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group"
+                }
+            ]
+        },
+        {
+            "name": "async handler",
+            "snippet": "${1:eventName}: async e => await handlers.${2:handlerNameAsync}${3:(e)}",
+            "documentation": [
+                "**event**\n\nEvent handler automatically added to the HTMLInputElement based on the property name. The property name follows the same patterns as the [v-on](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on) directive (including [modifiers](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on-modifiers))."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group"
+                }
+            ]
+        },
+        {
+            "name": "delegate",
+            "snippet": "${1:eventName}: e => {\n\t${2:console.log('Inside ${1}');}\n}",
+            "documentation": [
+                "**event**\n\nEvent handler automatically added to the HTMLInputElement based on the property name. The property name follows the same patterns as the [v-on](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on) directive (including [modifiers](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on-modifiers))."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group"
+                }
+            ]
+        },
+        {
+            "name": "modifier",
+            "snippet": "'${1:eventName}.${2|stop,prevent,capture,self,once,left,right,middle,passive|}': e => handlers.${3:handlerName}${4:(e)}",
+            "documentation": [
+                "**event**\n\nEvent handler automatically added to the HTMLInputElement based on the property name. The property name follows the same patterns as the [v-on](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on) directive (including [modifiers](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on-modifiers))."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group"
                 }
             ]
         }

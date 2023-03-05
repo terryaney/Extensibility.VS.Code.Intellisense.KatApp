@@ -16,50 +16,50 @@
             "name": "v-ka-rbl-no-calc", 
             "description": {
 				"kind": "markdown",
-				"value": "Flag an element so that any contained [`v-ka-input`](#https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-input) elements do not trigger a RBLe calculation upon change."
+				"value": "Flag an element so that any contained [`v-ka-input`](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input) elements do not trigger a RBLe calculation upon change."
 			},
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-rbl-no-calc" }
-            ]
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-rbl-no-calc" }
+            ]            
         },
         { 
             "name": "v-ka-rbl-exclude", 
             "description": {
 				"kind": "markdown",
-				"value": "Flag an element so that any contained [`v-ka-input`](#https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-input) elements do not trigger a RBLe calculation upon change **and** are never submitted to an RBLe calculation."
+				"value": "Flag an element so that any contained [`v-ka-input`](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input) elements do not trigger a RBLe calculation upon change **and** are never submitted to an RBLe calculation."
 			},
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-rbl-exclude" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-rbl-exclude" }
             ]
         },
         { 
             "name": "v-ka-unmount-clears-inputs", 
             "description": {
 				"kind": "markdown",
-				"value": "Flag an element so that when any contained [`v-ka-input`](#https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-input) elements are removed from the DOM, the associated [`state.inputs`](#https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#iapplicationdatainputs) value is also removed."
+				"value": "Flag an element so that when any contained [`v-ka-input`](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input) elements are removed from the DOM, the associated [`state.inputs`](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#iapplicationdatainputs) value is also removed."
 			},
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-unmount-clears-inputs" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-unmount-clears-inputs" }
             ]
         },
         { 
             "name": "v-ka-nomount", 
             "description": {
 				"kind": "markdown",
-				"value": "Flag an element so that any contained [`v-ka-input`](#https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-input) elements allow for the KatApp framework to wire up all automatic processing."
+				"value": "Flag an element so that any contained [`v-ka-input`](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input) elements allow for the KatApp framework to wire up all automatic processing."
 			},
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-nomount" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-nomount" }
             ]
         },
         { 
             "name": "v-pre", 
             "description": {
 				"kind": "markdown",
-				"value": "Use the `v-pre` directive to an element that is used for [IModalOptions.contentSelector](https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#imodaloptionscontentselector) if the markup within the element should not be processed by the host application, but instead should be processed and become reactive when the modal application is created."
+				"value": "Use the `v-pre` directive to an element that is used for [IModalOptions.contentSelector](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptionscontentselector) if the markup within the element should not be processed by the host application, but instead should be processed and become reactive when the modal application is created."
 			},
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-pre" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-pre" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-pre" }
             ]
         },
@@ -81,7 +81,7 @@
             "name": "v-if", 
             "description": "Conditionally render this element based on Vue expression.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-if--v-else--v-else-if" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-if--v-else--v-else-if" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-if" }
             ]
         },
@@ -89,7 +89,7 @@
             "name": "v-html", 
             "description": "Updated the element's InnerHTML with given Vue expression.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-html--v-text" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-html--v-text" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-html" }
             ]
         },
@@ -97,7 +97,7 @@
             "name": "v-text", 
             "description": "Updated the element's text content with given Vue expression.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-html--v-text" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-html--v-text" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-text" }
             ]
         },
@@ -105,7 +105,7 @@
             "name": "v-bind", 
             "description": "Dynamically bind one or more attributes to a Vue expression.  Prefer the :attributeName short-hand syntax.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-bind" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-bind" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-bind" }
             ]
         },
@@ -113,7 +113,7 @@
             "name": ":*", 
             "description": "Dynamically bind an attribute to a Vue expression.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-bind" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-bind" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-bind" }
             ]
         },
@@ -121,7 +121,7 @@
             "name": ":class", 
             "description": "Dynamically bind the class attribute to a Vue expression.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-bind" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-bind" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-bind" }
             ]
         },
@@ -129,7 +129,7 @@
             "name": ":data-", 
             "description": "Dynamically bind a data attribute to a Vue expression.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-bind" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-bind" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-bind" }
             ]
         },
@@ -137,7 +137,7 @@
             "name": "v-for", 
             "description": "Render the element or template block multiple times based on the source data.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-for" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-for" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-for" }
             ]
         },
@@ -145,7 +145,7 @@
             "name": "v-on", 
             "description": "Attach an event listener to the element.  Prefer the @eventName short-hand syntax.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-on" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-on" }
             ]
         },
@@ -153,7 +153,7 @@
             "name": "@click", 
             "description": "Attach a click event listener to the element.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-on" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-on" }
             ]
         },
@@ -161,7 +161,7 @@
             "name": "@click.prevent", 
             "description": "Attach a click event listener to the element and prevent event bubbling.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-on" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-on" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-on" }
             ]
         },
@@ -169,116 +169,113 @@
             "name": "v-show", 
             "description": "Toggle the element's visibility based on the truthy-ness of the Vue expression value.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-show" },
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-show" },
                 { "name": "Vue Documentation", "url": "https://vuejs.org/api/built-in-directives.html#v-show" }
             ]
         },
         { 
             "name": "v-ka-value", 
-            "description":{
-				"kind": "markdown",
-				"value": "Update element's innerHTML from designated RBLe Framework result.\n\nThe v-ka-value directive is responsible for assigning element HTML content from the calculation results. It is simply a shorthand syntax to use in place of `v-html` and [`rbl.value()`](#https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#iapplicationdatarblvalue).\n\nThe following statements are 'equivalent':\n\n`<div v-ka-value=\"nameFirst\"></div>`\n\n`<div v-ka-value=\"rbl-value.nameFirst\"></div>`\n\n`<div v-html=\"rbl.value( 'nameFirst' )\"></div>`\n\n`<div v-html=\"rbl.value( 'rbl-value', 'nameFirst' )\"></div>`\n\n\n\nThis directive is almost equivalent to `v-html=\"rbl.value(...)\"` with a single caveat. When the requested value does not exist in the calculation results, `rbl.value()` returns `undefined` and that would be rendered if the `v-html` directive was used. With `v-ka-value`, when the value does not exist, the element's current HTML is left unmodified."
-			},
+            "description": "Update element's innerHTML from designated RBLe Framework result.\nThe v-ka-value directive is responsible for assigning element HTML content from the calculation results. It is simply a shorthand syntax to use in place of `v-html` and [`rbl.value()`](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#iapplicationdatarblvalue).\nThe following statements are 'equivalent':\n```html\n<div v-ka-value=\"nameFirst\"></div>\n<div v-ka-value=\"rbl-value.nameFirst\"></div>\n<div v-html=\"rbl.value( 'nameFirst' )\"></div>\n<div v-html=\"rbl.value( 'rbl-value', 'nameFirst' )\"></div>\n```\n\nThis directive is almost equivalent to `v-html=\"rbl.value(...)\"` with a single caveat. When the requested value does not exist in the calculation results, `rbl.value()` returns `undefined` and that would be rendered if the `v-html` directive was used. With `v-ka-value`, when the value does not exist, the element's current HTML is left unmodified.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-value" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-value" }
             ]
         },
         { 
             "name": "v-ka-resource", 
-            "description": "When a KatApp needs to support localization (different language translations), the `v-ka-resource` can work in conjunction with the [`IKatAppOptions.resourceStrings`](#https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#ikatappoptions) to replace the element's `innerHTML` with a translated string.",
+            "description": "When a KatApp needs to support localization (different language translations), the `v-ka-resource` can work in conjunction with the [`IKatAppOptions.resourceStrings`](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#ikatappoptions) to replace the element's `innerHTML` with a translated string.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-resource" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-resource" }
             ]
         },
         { 
             "name": "v-ka-input", 
             "description": "Render input template or bind existing inputs to RBLe Framework calculations.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-input" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input" }
             ]
         },
         { 
             "name": "v-ka-input-group", 
             "description": "Render template representing multiple inputs of the same type and bind to RBLe Framework calculations.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-input-group" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group" }
             ]
         },
         { 
             "name": "v-ka-navigate", 
             "description": "Configure navigation within Kaml Views to other Kaml Views in Host Environment.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-navigate" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate" }
             ]
         },
         { 
             "name": "v-ka-template", 
             "description": "Render template with or without a data source; the data source can be an array rendering template content multiple times.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-template" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-template" }
             ]
         },
         { 
             "name": "v-ka-api", 
             "description": "Configure a HTMLElement to submit to an api endpoint on click event.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-api" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-api" }
             ]
         },
         { 
             "name": "v-ka-modal", 
             "description": "Configure a HTMLElement to open up a modal dialog (containing fixed markup or seperate Kaml View) on click.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-modal" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-modal" }
             ]
         },
         { 
             "name": "v-ka-app", 
             "description": "Nest an instance of a seperate Kaml View within the current Kaml View (the KatApps will be isolated from each other).",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-app" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-app" }
             ]
         },
         { 
             "name": "v-ka-table", 
             "description": "Render HTML tables automatically from the calculation results based on `text*` and `value*` columns.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-table" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-table" }
             ]
         },
         { 
             "name": "v-ka-highchart", 
             "description": "Render Highcharts chart automatically from the calculation results.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-highchart" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-highchart" }
             ]
         },
         { 
             "name": "v-ka-attributes", 
             "description": "Accepts a key/value space delimitted `string` of attributes and applies them to the current `HTMLElement`.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-attributes" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-attributes" }
             ]
         },
         { 
             "name": "v-ka-needs-calc", 
             "description": "Control UI state when a submission form requires a RBLe Framework calculation before user can click the 'submit' button.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-needs-calc" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-needs-calc" }
             ]
         },
         { 
             "name": "v-ka-inline", 
             "description": "Render raw HTML without the need for a `HTMLElement` 'container'.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-inline" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-inline" }
             ]
         },
         { 
             "name": "v-ka-nomount", 
             "description": "There are some situations where inputs should not be automatically processed (i.e. if a template has hidden inputs that are for internal use only - i.e. file upload templates). When an input should not be processed, the v-ka-nomount attribute can be applied to the input.",
             "references": [
-                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/nexgen-documentation/blob/main/KatApp.Vue.md#v-ka-nomount" }
+                { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-nomount" }
             ]
         }
     ],

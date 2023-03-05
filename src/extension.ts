@@ -40,14 +40,15 @@ export function activate(context: vscode.ExtensionContext) {
 
 			let currentAttribute: string | null = null;
 			let currentAttributeValue: string | null = null;
-			let attrValuePos = -1;
+			let attrValueStartPos = -1;
+
 			for (const attrName in node.attributes) {
 				currentAttributeValue = node.attributes[attrName];
 				if (currentAttributeValue != null) {
-					attrValuePos = nodeContent.indexOf(`${attrName}=${currentAttributeValue}`);
-					const attrStartOffset = `${attrName}=`.length
-					const attributeStart = node.start + attrValuePos + attrStartOffset;
-					const attributeEnd = node.start + attrValuePos + attrStartOffset + currentAttributeValue.length;
+					const attrNamePos = nodeContent.indexOf(attrName);
+					attrValueStartPos = node.start + nodeContent.indexOf(currentAttributeValue, attrNamePos);
+					const attributeStart = attrValueStartPos;
+					const attributeEnd = attrValueStartPos + currentAttributeValue.length;
 					
 					if (offset > attributeStart && offset < attributeEnd) {
 						currentAttribute = attrName;
@@ -68,21 +69,35 @@ export function activate(context: vscode.ExtensionContext) {
 				sourceCode = sourceCode.substring(0, sourceCode.length - 1);
 			}
 			const isModel = sourceCode != "" && sourceCode?.startsWith("{");
+			
+			const vueModelCode = `var parsed = ${sourceCode}`;
 			const tsSourceFile = isModel
-				? ts.createSourceFile(__filename, `var parsed = ${sourceCode}`, ts.ScriptTarget.Latest)
+				? ts.createSourceFile(__filename, vueModelCode, ts.ScriptTarget.Latest)
 				: undefined;
 
 			const parsedInitializer = (tsSourceFile?.statements[0] as ts.VariableStatement)?.declarationList.declarations[0].initializer!;
 			const parsedProperties = (parsedInitializer as ts.ObjectLiteralExpression)?.properties;
-			const usedProperties = getUsedProperties(parsedProperties);
+			const usedProperties = getUsedProperties(parsedProperties, vueModelCode);
 
 			let completionName: string | undefined = undefined;
 			let excludedProperties: Array<string> = [];
 
+			const isInsideModelProperty = (modelPropertyName: string) : boolean => {
+				const modelProperty = usedProperties.find(p => p.name == modelPropertyName);
+				
+				if (modelProperty == undefined) return false;
+
+				// Code for ts compiler is prefixed always with "var parsed = ", so get rid of 13 chars
+				// I also get rid of leading/trailing " in attribute value, so have to put position + 1 to handle
+				const modelPropertyStart = attrValueStartPos + modelProperty.start - 12;
+				const modelPropertyEnd = attrValueStartPos + modelProperty.end - 12;
+				return offset > modelPropertyStart && offset < modelPropertyEnd;
+			};
+
 			switch (currentAttribute) {
 				case "v-for":
 				case "v-ka-value":
-				case "v-ka-resource":
+				case "v-ka-resource": {
 					if (!isModel) {
 						completionName = currentAttribute;
 					}
@@ -94,26 +109,29 @@ export function activate(context: vscode.ExtensionContext) {
 							.map((c: ICompletionItem) => c.name);
 					}
 					break;
-				
+				}
+					
 				case "v-ka-input":
+				case "v-ka-input-group":
 					let inputProperties = usedProperties.map(p => p.name);
 					const tagName = (node.tag ?? "").toUpperCase();
 					completionName = ["INPUT", "SELECT", "TEXTAREA" ].indexOf(tagName) > -1
 						? `${currentAttribute}.input`
 						: ( !isModel ? currentAttribute : `${currentAttribute}.model` );
 
-					const help = usedProperties.find(p => p.name == "help");
-
-					if (help != undefined) {
-						const openBracePos = nodeContent.substring(attrValuePos + help.start, attrValuePos + help.end).indexOf("{");
-						const helpModelStart = node.start + attrValuePos + help.start + openBracePos;
-						const helpModelEnd = node.start + attrValuePos + help.end;
-						if (offset > helpModelStart && offset < helpModelEnd) {
-							completionName = `${currentAttribute}.help.model`;
-							inputProperties = inputProperties.filter(n => n.startsWith("help.")).map(n => n.split(".")[1]);
-						}
+					if (isInsideModelProperty("help") || isInsideModelProperty("helps")) {
+						completionName = `${currentAttribute}.help.model`;
+						inputProperties = inputProperties.filter(n => n.startsWith("help.")).map(n => n.split(".")[1]);
 					}
-					
+					else if (isInsideModelProperty("css")) {
+						completionName = `${currentAttribute}.css.model`;
+						inputProperties = inputProperties.filter(n => n.startsWith("css.")).map(n => n.split(".")[1]);
+					}
+					else if (isInsideModelProperty("events")) {
+						completionName = `${currentAttribute}.events.model`;
+						inputProperties = inputProperties.filter(n => n.startsWith("events.")).map(n => n.split(".")[1]);
+					};
+
 					if (isModel) {
 						excludedProperties = modelCompletions[completionName]
 							.filter((c: ICompletionItem) => inputProperties.indexOf(c.name) != -1)
@@ -132,7 +150,7 @@ export function activate(context: vscode.ExtensionContext) {
 						let md = property.documentation.join("\n\n");
 
 						if (property.references != undefined) {
-							md += "\n\n\n\n" + property.references.map(r => `[${r.name}](#${r.url}) `).join("| ");
+							md += "\n\n\n\n" + property.references.map(r => `[${r.name}](${r.url}) `).join("| ");
 						}
 
 						const documentation = new vscode.MarkdownString(md);
@@ -151,18 +169,21 @@ export function activate(context: vscode.ExtensionContext) {
     }));	
 }
 
-function getUsedProperties(properties: ts.NodeArray<ts.ObjectLiteralElementLike> | undefined): Array<{name: string, start: number, end: number}> {
-	const usedProperties: Array<{name: string, start: number, end: number}> = [];
-	// Code for ts compiler is prefixed always with "var parsed = ", so get rid of 13 chars
-	// I also get rid of leading/trailing " in attribute value, so have to put position + 1 to handle
+function getUsedProperties(properties: ts.NodeArray<ts.ObjectLiteralElementLike> | undefined, vueModelCode: string): Array<IModelProperty> {
+	const usedProperties: Array<IModelProperty> = [];
+
 	properties?.forEach(property => {
 		const propertyName = (property.name as ts.Identifier)?.escapedText ?? "";
-		usedProperties.push({ name: propertyName, start: property.pos, end: property.end });
+		usedProperties.push({
+			name: propertyName,
+			start: vueModelCode.indexOf(":", property.pos) + 1,
+			end: property.end
+		});
 		const propertyInitializer = (property as ts.PropertyAssignment)?.initializer;
 		if (propertyInitializer != undefined && ts.isObjectLiteralExpression(propertyInitializer)) {
-			const childProperties = getUsedProperties(propertyInitializer.properties);
+			const childProperties = getUsedProperties(propertyInitializer.properties, vueModelCode);
 			childProperties.forEach(childProperty => {
-				usedProperties.push({ name: `${propertyName}.${childProperty.name}`, start: childProperty.start - 12, end: childProperty.end - 12 });
+				usedProperties.push({ name: `${propertyName}.${childProperty.name}`, start: childProperty.start, end: childProperty.end });
 			});
 		}
 	});
@@ -178,4 +199,9 @@ interface ICompletionItem {
 	snippet: string;
 	documentation: Array<string>;
 	references?: Array<{ name: string, url: string }>;
+}
+interface IModelProperty {
+	name: string;
+	start: number;
+	end: number;
 }
