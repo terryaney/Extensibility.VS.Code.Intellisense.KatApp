@@ -55,4 +55,8 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 Initial release of the extension.
 
+1. All `v-*` attributes used in KatApp Framework appear in VS Code suggestions when modifying an element.
+1. Can hover over all/any `v-*` attributes and get contextual help and links to full documentation.
+1. `v-ka-*` Directive Models - Suggestions for model properties for `v-ka-value`, `v-for`, `v-ka-resource`, `v-ka-input`, and `v-ka-input-group` complete.
+
 **Enjoy!**
