@@ -1,9 +1,9 @@
 {
   "name": "vs-code-intellisense-katapp",
   "displayName": "KAT Intellisense for KatApp Framework",
-  "description": "",
+  "description": "A VS Code extension to provide intellisense and code completion suggestions for KatApp Framework features when editing `.kaml` files.",
   "repository": "https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.76.0"
   },
@@ -19,13 +19,7 @@
       "customData": [
         "./data/katapp.html-data.json"
       ]
-    },
-    "commands": [
-      {
-        "command": "vs-code-intellisense-katapp.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

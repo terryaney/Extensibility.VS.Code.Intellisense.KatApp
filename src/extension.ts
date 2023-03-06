@@ -110,27 +110,26 @@ export function activate(context: vscode.ExtensionContext) {
 					}
 					break;
 				}
-					
+				
 				case "v-ka-input":
 				case "v-ka-input-group":
+				case "v-ka-navigate": {
 					let inputProperties = usedProperties.map(p => p.name);
-					const tagName = (node.tag ?? "").toUpperCase();
-					completionName = ["INPUT", "SELECT", "TEXTAREA" ].indexOf(tagName) > -1
-						? `${currentAttribute}.input`
-						: ( !isModel ? currentAttribute : `${currentAttribute}.model` );
+					completionName = !isModel ? currentAttribute : `${currentAttribute}.model`;
 
-					if (isInsideModelProperty("help") || isInsideModelProperty("helps")) {
-						completionName = `${currentAttribute}.help.model`;
-						inputProperties = inputProperties.filter(n => n.startsWith("help.")).map(n => n.split(".")[1]);
+					const modelContainerProperties = [
+						"inputs", "help", "helps", "css", "events",
+						"confirm.labels", "confirm.css", "confirm"
+					];
+
+					for (let index = 0; index < modelContainerProperties.length; index++) {
+						const property = modelContainerProperties[index];
+						if (isInsideModelProperty(property)) {
+							completionName = `${currentAttribute}.${property}.model`;
+							inputProperties = inputProperties.filter(n => n.startsWith(`${property}`)).map(n => n.split(".").slice(-1)[0]);
+							index = modelContainerProperties.length;
+						}
 					}
-					else if (isInsideModelProperty("css")) {
-						completionName = `${currentAttribute}.css.model`;
-						inputProperties = inputProperties.filter(n => n.startsWith("css.")).map(n => n.split(".")[1]);
-					}
-					else if (isInsideModelProperty("events")) {
-						completionName = `${currentAttribute}.events.model`;
-						inputProperties = inputProperties.filter(n => n.startsWith("events.")).map(n => n.split(".")[1]);
-					};
 
 					if (isModel) {
 						excludedProperties = modelCompletions[completionName]
@@ -138,6 +137,7 @@ export function activate(context: vscode.ExtensionContext) {
 							.map((c: ICompletionItem) => c.name);
 					}
 					break;
+				}
 			}
 
 			if (completionName != undefined) {

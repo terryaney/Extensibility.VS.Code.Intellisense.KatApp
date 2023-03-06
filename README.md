@@ -51,6 +51,10 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 ## Release Notes
 
+### 1.0.1
+
+1. `v-ka-*` Directive Models - Suggestions for model properties for `v-ka-navigate` complete.
+
 ### 1.0.0
 
 Initial release of the extension.

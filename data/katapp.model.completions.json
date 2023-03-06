@@ -1257,8 +1257,36 @@
                 }
             ]
         }
-   ],
-    "v-ka-input-group.help.model": [
+    ],
+    "v-ka-input-group.css.model": [
+        {
+            "name": "container",
+            "snippet": "container: '${1:container css}'",
+            "documentation": [
+                "**container**\n\nSpace delimitted list of CSS classes to apply to the 'container' (container is determined by the host framework when they create a template for inputs)."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        },
+        {
+            "name": "input",
+            "snippet": "input: '${1:input css}'",
+            "documentation": [
+                "**input**\n\nSpace delimitted list of CSS classes to apply to the 'input' (input is determined by the host framework when they create a template for inputs)."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-input-group Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group-model"
+                }
+            ]
+        }
+    ],
+    "v-ka-input-group.helps.model": [
         {
             "name": "content",
             "snippet": "content: '${1:Help content}'",
@@ -1353,6 +1381,370 @@
                 {
                     "name": "v-ka-input-group",
                     "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-input-group"
+                }
+            ]
+        }
+    ],
+    "v-ka-navigate": [
+        {
+            "name": "View ID",
+            "snippet": "${1:View.ID}",
+            "documentation": [
+                "**View ID**\n\nSimply provide the string literal name of the view to navigate to."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate"
+                }
+            ]
+        },
+        {
+            "name": "View ID with ki- Params",
+            "snippet": "{ view: `${1:viewId}?${2:ki-input-name}=\\${${3:scope}.${4:property}}` }",
+            "documentation": [
+                "**View ID with ki- Params**\n\nUse a string literal Kaml view ID and pass along `ki-*` query string values.  The spinal case is converted to an input and passed to the newly rendered KatApp/View.",
+                "`Common.Profile?ki-view-mode=readonly` would navigate to `Common.Profile` and pass an input of `iViewMode: readonly`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate"
+                }
+            ]
+        },
+        {
+            "name": "{} Model",
+            "snippet": "{ view: ${1:scope}.${2:view}${3:, inputs: { ${4:iInputName}: ${5:scope}.${6:property} }} }",
+            "documentation": [
+                "**v-ka-navigate Model**\n\nUse the model syntax to specify `view` and `inputs` via current scope properties, along with any other properties available to the `v-ka-navigate` model."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                }
+            ]
+        }
+    ],
+    "v-ka-navigate.model": [
+        {
+            "name": "view",
+            "snippet": "view: ${1|'ViewName',scope.view|}",
+            "documentation": [
+                "**view**\n\nThe name of the Kaml View to navigate to."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                }
+            ]
+        },
+        {
+            "name": "confirm",
+            "snippet": "confirm: { content: ${1|'Are you sure you want to navigate?',application.getLocalizedString('confirmKey')|} }",
+            "documentation": [
+                "**confirm**\n\nIf a confirmation dialog should be displayed to prompt the user whether or not to allow the navigation, the options for the dialog can be provided."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
+                }
+            ]
+        },
+        {
+            "name": "inputs",
+            "snippet": "inputs: { ${1:iName}: ${2:scope}.${3:property} }",
+            "documentation": [
+                "**inputs**\n\nIf inputs should be passed to the KatApp being navigated to, an [ICalculationInputs](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#icalculationinputs) object can be provided."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                }
+            ]
+        },
+        {
+            "name": "ceInputs",
+            "snippet": "ceInputs: ${1:scope}.${2:ceInputs}",
+            "documentation": [
+                "**ceInputs**\n\nSome CalcEngines return an key/value space delimitted string of inputs in their result tables with the intention of those values being passed in as a representation of [ICalculationInputs](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#icalculationinputs)."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                }
+            ]
+        },
+        {
+            "name": "persistInputs",
+            "snippet": "persistInputs: ${1|true,false|}",
+            "documentation": [
+                "**persistInputs**\n\nWhether or not to persist the inputs in sessionStorage. If true and the user navigates away from current view and comes back the inputs will automatically be injected into the KatApp. If false and the user navigates away and returns the input values will not longer be present. The default value is false."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                }
+            ]
+        },
+        {
+            "name": "model",
+            "snippet": "model: ${1:scope}.${2:model}",
+            "documentation": [
+                "**model**\n\nIf the entire `IKaNavigateModel` parameter is being provided by a CalcEngine via a valid 'JSON string', this property can be assigned in place of using all the above individual properties."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                }
+            ]
+        }
+    ],
+    "v-ka-navigate.inputs.model": [
+        {
+            "name": "scope input",
+            "snippet": "${1:inputName}: ${2:scope}.${3:property}",
+            "documentation": [
+                "**scope input**\n\nAdditional input to pass to the rendered Kaml View."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                }
+            ]
+        },
+        {
+            "name": "string input",
+            "snippet": "${1:inputName}: '${2:inputValue}'",
+            "documentation": [
+                "**string input**\n\nAdditional input to pass to the rendered Kaml View."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                }
+            ]
+        }
+    ],
+    "v-ka-navigate.confirm.model": [
+        {
+            "name": "content",
+            "snippet": "content: ${1|'Are you sure you want to navigate?',application.getLocalizedString('confirmKey')|}",
+            "documentation": [
+                "**content**\n\nIf the content for the modal being displayed is a HTML fragment confirmation message, the HTML markup can be passed directly as a string versus having to build a Kaml View for simple modal confirmations."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
+                }
+            ]
+        },
+        {
+            "name": "contentSelector",
+            "snippet": "contentSelector: '${1:.jquery-selector}'",
+            "documentation": [
+                "**contentSelector**\n\nIf the content for the modal being displayed is generated by the current application, a DOM element selector string can be passed versus having to build a Kaml View. When `contentSelector` is passed, the KatApp Framework will clone the element's content. Add the attribute [v-pre](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-pre) if the modal markup should be reactive."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
+                }                
+            ]
+        },
+        {
+            "name": "labels",
+            "snippet": "labels: {\n\ttitle: ${1|'Are You Sure?',application.getLocalizedString('confirmTitleKey')|},\n\tcontinue: ${2|'Continue',application.getLocalizedString('continueKey')|}\n}",
+            "documentation": [
+                "**labels**\n\nProvide custom labels to be used when the KatApp framework builds the modal container."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
+                }                
+            ]
+        },
+        {
+            "name": "css",
+            "snippet": "css: { ${1:continue: '${2:btn btn-primary}', }${3:cancel: '${4:btn btn-outline-primary}'} }",
+            "documentation": [
+                "**css**\n\nProvide custom css to be used when the KatApp framework builds the modal container."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
+                }                
+            ]
+        },
+        {
+            "name": "size",
+            "snippet": "size: '${1|xl,lg,md,sm|}'",
+            "documentation": [
+                "**size**\n\nBy default, if a modal is rendering a Kaml View, the size will be `xl`, otherwise `undefined`. The modal size is based on the value passed in. See [Bootstrap Modal Sizes](https://getbootstrap.com/docs/5.0/components/modal/#optional-sizes) for more information."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
+                }                
+            ]
+        },
+        {
+            "name": "scrollable",
+            "snippet": "scrollable: ${1|true,false|}",
+            "documentation": [
+                "**scrollable**\n\nBy default, modal content will not be scrollable; only the *entire modal dialog* is scrollable. If a modal dialog should have its own vertical scrollbar for its body/content, pass `true`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
+                }                
+            ]
+        },
+        {
+            "name": "showCancel",
+            "snippet": "showCancel: ${1|true,false|}",
+            "documentation": [
+                "**showCancel**\n\nBy default, a modal shows both a 'continue' and a 'cancel' button. If the displayed dialog only needs a 'continue' (i.e. confirming a transactional result message), set this value to `true` to hide the 'cancel' button."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
+                }                
+            ]
+        }
+    ],
+    "v-ka-navigate.confirm.labels.model": [
+        {
+            "name": "title",
+            "snippet": "title: ${1|'Are you sure?',application.getLocalizedString('confirmTitleKey')|}",
+            "documentation": [
+                "**title**\n\nA title can be provided if the modal should display a title. If not provided, no modal header/title will be displayed."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
+                }
+            ]
+        },
+        {
+            "name": "continue",
+            "snippet": "continue: ${1|'Continue',application.getLocalizedString('confirmContinueKey')|}",
+            "documentation": [
+                "**continue**\n\nProvide a label to use for the 'continue' button. Default is 'Continue'."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
+                }
+            ]
+        },
+        {
+            "name": "cancel",
+            "snippet": "cancel: ${1|'Cancel',application.getLocalizedString('confirmCancelKey')|}",
+            "documentation": [
+                "**cancel**\n\nProvide a label to use for the 'cancel' button. Default is 'Cancel'."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
+                }
+            ]
+        }
+    ],
+    "v-ka-navigate.confirm.css.model": [
+        {
+            "name": "continue",
+            "snippet": "continue: '${1:btn btn-primary}'",
+            "documentation": [
+                "**continue**\n\nProvide css to apply to the 'continue' button. Default is `btn btn-primary`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
+                }
+            ]
+        },
+        {
+            "name": "cancel",
+            "snippet": "cancel: '${1:btn btn-primary-outline}'",
+            "documentation": [
+                "**cancel**\n\nProvide css to apply to the 'cancel' button. Default is `btn btn-primary-outline`."
+            ],
+            "references": [
+                {
+                    "name": "v-ka-navigate Model",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+                },
+                {
+                    "name": "IModalOptions",
+                    "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imodaloptions"
                 }
             ]
         }
