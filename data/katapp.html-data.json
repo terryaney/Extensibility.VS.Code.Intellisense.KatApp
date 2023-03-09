@@ -252,7 +252,7 @@
         },
         { 
             "name": "v-ka-attributes", 
-            "description": "Accepts a key/value space delimitted `string` of attributes and applies them to the current `HTMLElement`.",
+            "description": "Accepts a key/value space delimitted `string` of attributes and applies them to the current `HTMLElement`.\n\n**Model**\n```javascript\nrow: {\n\t\"@id\": \"123\",\n\tattributes: \"data-show=\\\"profile1\\\" data-context=\\\"profile\\\"\"\n}\n```\n**Markup**\n```html\n<div v-ka-attributes=\"row.attributes\"></div>\n<!-- Renders... -->\n<div data-show=\"profile1\" data-context=\"profile\"></div>\n```\n",
             "references": [
                 { "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-attributes" }
             ]

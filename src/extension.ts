@@ -26,7 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposable);
 
 	const modelCompletionsPath = path.resolve(__dirname, '../data/katapp.model.completions.json');
-	const modelCompletions = JSON.parse(fs.readFileSync(modelCompletionsPath, 'utf8'));
+	const modelCompletions: Record<string, Array<ICompletionItem>> = JSON.parse(fs.readFileSync(modelCompletionsPath, 'utf8'));
 
     // Register a completion item provider for HTML files
     context.subscriptions.push(vscode.languages.registerCompletionItemProvider('html', {
@@ -80,6 +80,7 @@ export function activate(context: vscode.ExtensionContext) {
 			const usedProperties = getUsedProperties(parsedProperties, vueModelCode);
 
 			let completionName: string | undefined = undefined;
+			let globalCompletionName: string | undefined = undefined;
 			let excludedProperties: Array<string> = [];
 
 			const isInsideModelProperty = (modelPropertyName: string) : boolean => {
@@ -97,7 +98,10 @@ export function activate(context: vscode.ExtensionContext) {
 			switch (currentAttribute) {
 				case "v-for":
 				case "v-ka-value":
-				case "v-ka-resource": {
+				case "v-ka-resource":
+				case "v-ka-table":
+				case "v-ka-highchart":
+				case "v-ka-attributes": {
 					if (!isModel) {
 						completionName = currentAttribute;
 					}
@@ -105,21 +109,27 @@ export function activate(context: vscode.ExtensionContext) {
 						completionName = `${currentAttribute}.model`;
 						
 						excludedProperties = modelCompletions[completionName]
-							.filter((c: ICompletionItem) => usedProperties.map(p => p.name).indexOf(c.name) != -1)
-							.map((c: ICompletionItem) => c.name);
+							.filter(c => usedProperties.map(p => p.name).indexOf(c.name) != -1)
+							.map(c => c.name);
 					}
 					break;
 				}
 				
+				// Directives with child object properties
 				case "v-ka-input":
 				case "v-ka-input-group":
-				case "v-ka-navigate": {
+				case "v-ka-navigate":
+				case "v-ka-template":
+				case "v-ka-api":
+				case "v-ka-modal":
+				case "v-ka-app": {
 					let inputProperties = usedProperties.map(p => p.name);
 					completionName = !isModel ? currentAttribute : `${currentAttribute}.model`;
 
 					const modelContainerProperties = [
 						"inputs", "help", "helps", "css", "events",
-						"confirm.labels", "confirm.css", "confirm"
+						"confirm.labels", "confirm.css", "confirm",
+						"source", "calculationInputs", "calculateOnSuccess", "calculateOnConfirm", "apiParameters"
 					];
 
 					for (let index = 0; index < modelContainerProperties.length; index++) {
@@ -127,29 +137,64 @@ export function activate(context: vscode.ExtensionContext) {
 						if (isInsideModelProperty(property)) {
 							completionName = `${currentAttribute}.${property}.model`;
 							inputProperties = inputProperties.filter(n => n.startsWith(`${property}`)).map(n => n.split(".").slice(-1)[0]);
-							index = modelContainerProperties.length;
+							index = modelContainerProperties.length; // just break out of loop
 						}
 					}
 
-					if (isModel) {
-						excludedProperties = modelCompletions[completionName]
-							.filter((c: ICompletionItem) => inputProperties.indexOf(c.name) != -1)
-							.map((c: ICompletionItem) => c.name);
+					if (isModel) {		
+						globalCompletionName = modelCompletions[completionName]?.[0].globalName;
+
+						excludedProperties = modelCompletions[globalCompletionName ?? completionName]
+							.filter(c => inputProperties.indexOf(c.name) != -1)
+							.map(c => c.name);
 					}
 					break;
 				}
 			}
 
 			if (completionName != undefined) {
-				const completions = modelCompletions[completionName]
-					.filter((property: ICompletionItem) => excludedProperties?.indexOf( property.name ) == -1 )
-					.map((property: ICompletionItem, index: number) => {
+				const completionReferences = globalCompletionName != undefined
+					? modelCompletions[completionName][0].references
+					: undefined;
+				
+				let completionItems = globalCompletionName != undefined
+					? modelCompletions[globalCompletionName].map<ICompletionItem>(i => ({
+						name: i.name,
+						documentation: i.documentation,
+						snippet: i.snippet,
+						references: (completionReferences ?? []).concat(i.references ?? [])
+					}))
+					: modelCompletions[completionName]
+
+				if (completionItems.find(i => i.globalInclude != undefined) != undefined) {
+					const mergedCompletionItems: Array<ICompletionItem> = [];
+
+					completionItems.forEach(i => {
+						if (i.globalInclude == undefined) {
+							mergedCompletionItems.push(i);
+						}
+						else {
+							modelCompletions[i.globalInclude].map<ICompletionItem>(gi => ({
+								name: gi.name,
+								documentation: gi.documentation,
+								snippet: gi.snippet,
+								references: (completionReferences ?? []).concat(gi.references ?? [])
+							})).forEach(gi => mergedCompletionItems.push(gi));
+						}
+					});
+
+					completionItems = mergedCompletionItems;
+				}
+				
+				const completions = completionItems
+					.filter(property => excludedProperties?.indexOf( property.name ) == -1 )
+					.map((property, index) => {
 						const item = new vscode.CompletionItem(property.name, vscode.CompletionItemKind.Property);
 						const snippet = new vscode.SnippetString(property.snippet);
 						item.insertText = snippet;
 						let md = property.documentation.join("\n\n");
 
-						if (property.references != undefined) {
+						if (property.references != undefined && property.references.length > 0) {
 							md += "\n\n\n\n" + property.references.map(r => `[${r.name}](${r.url}) `).join("| ");
 						}
 
@@ -157,7 +202,7 @@ export function activate(context: vscode.ExtensionContext) {
 						documentation.supportHtml = true;
 						documentation.supportThemeIcons = true;
 						item.documentation = documentation;
-						item.sortText = `0${index}`; // Make the suggestions appear in a predictable order
+						item.sortText = index.toString().padStart(5, '0');
 						return item;
 					});
 
@@ -195,6 +240,8 @@ function getUsedProperties(properties: ts.NodeArray<ts.ObjectLiteralElementLike>
 export function deactivate() { }
 
 interface ICompletionItem {
+	globalName?: string;
+	globalInclude?: string;
 	name: string;
 	snippet: string;
 	documentation: Array<string>;

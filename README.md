@@ -40,6 +40,7 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 ## Future Ideas
 
+1. Snippets for v-ka-* that inject div with attribute and default settings to start
 1. Template Detection - When assigning a template, get a list of known templates and allow for choosing from known list.
 1. Single vs Array of Objects - When inside properties that can be array (use ts.isArrayLiteralExpression(propertyInitializer)) or single 'known object', propmt the correct intellisense (i.e. v-ka-input-group.helps - should be able to prompt for help object properties correctly)
 1. `v-ka-*` Model property hover - When hovering over a known property of the model, have intellisense popup.
@@ -53,7 +54,9 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 ### 1.0.1
 
-1. `v-ka-*` Directive Models - Suggestions for model properties for `v-ka-navigate` complete.
+1. `v-ka-*` Directive Models - Suggestions for model properties for `v-ka-navigate`, `v-ka-template`, `v-ka-api`, `v-ka-modal`, `v-ka-app`, `v-ka-table`, `v-ka-highchart`, and `v-ka-attributes` complete.
+1. Typos in attribute suggestions and model suggestions.
+1. Feature complete at this point.  Please report any issues you encounter.
 
 ### 1.0.0
 
