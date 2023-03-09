@@ -25,7 +25,7 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 ## Getting Started
 
-1. [Download the extension](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/VS.Code.Intellisense.KatApp.vsix).
+1. [Download the extension](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/vs-code-intellisense-katapp-1.0.2.vsix).
 1. Install the extension by pressing `CTRL+SHIFT+P` to bring up VS Code command pallette.  Type `VSIX` and choose `Extensions: Install from VSIX...`.
 
 ![Install from VSIX](images/install.png)
@@ -67,3 +67,8 @@ Initial release of the extension.
 1. `v-ka-*` Directive Models - Suggestions for model properties for `v-ka-value`, `v-for`, `v-ka-resource`, `v-ka-input`, and `v-ka-input-group` complete.
 
 **Enjoy!**
+
+## Previous Versions
+
+[1.0.2](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/vs-code-intellisense-katapp-1.0.2.vsix)
+[1.0.2](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/vs-code-intellisense-katapp-1.0.1.vsix)
