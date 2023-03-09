@@ -70,5 +70,5 @@ Initial release of the extension.
 
 ## Previous Versions
 
-[1.0.2](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/vs-code-intellisense-katapp-1.0.2.vsix)
-[1.0.2](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/vs-code-intellisense-katapp-1.0.1.vsix)
+1. [1.0.2](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/vs-code-intellisense-katapp-1.0.2.vsix)
+1. [1.0.1](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/vs-code-intellisense-katapp-1.0.1.vsix)
