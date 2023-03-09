@@ -25,7 +25,7 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 ## Getting Started
 
-1. [Download the extension](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/vs-code-intellisense-katapp-1.0.2.vsix).
+1. [Download the extension](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/vs-code-intellisense-katapp-1.0.3.vsix).
 1. Install the extension by pressing `CTRL+SHIFT+P` to bring up VS Code command pallette.  Type `VSIX` and choose `Extensions: Install from VSIX...`.
 
 ![Install from VSIX](images/install.png)
@@ -51,6 +51,11 @@ A VS Code extension to provide intellisense and code completion suggestions for 
     1. When inside a v-for, able make scope work?
 
 ## Release Notes
+
+### 1.0.3
+
+1. Sherpa KAT logo :)
+1. Fixed install issue with missing 'typescript' library.
 
 ### 1.0.1
 

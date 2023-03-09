@@ -5,10 +5,13 @@
     "name": "Terry Aney",
     "email": "terry.aney@icloud.com"
   },
+  "icon": "images/logo.png",
   "license": "UNLICENSED",
   "displayName": "Intellisense for KatApp Framework",
   "description": "A VS Code extension to provide intellisense and code completion suggestions for KatApp Framework features when editing `.kaml` files.",
-  "repository": "https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp",
+  "repository": {
+	"url": "https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp"
+  },
   "version": "1.0.3",
   "engines": {
     "vscode": "^1.76.0"
