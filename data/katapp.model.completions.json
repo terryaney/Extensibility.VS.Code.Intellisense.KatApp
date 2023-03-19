@@ -898,7 +898,7 @@
 		},
 		{
 			"name": "mask",
-			"snippet": "mask: '(###) ###-####'",
+			"snippet": "mask: '${1|phone,zip+4|}'",
 			"documentation": [
 				"**mask**\n\nProvide an input mask to apply during user input for text inputs. The value can also be provided via the `rbl-input.mask` RBLe Framework calculation value."
 			],
@@ -1353,7 +1353,7 @@
 		},
 		{
 			"name": "masks",
-			"snippet": "masks: '(###) ###-####'",
+			"snippet": "masks: '${1|phone,zip+4|}'",
 			"documentation": [
 				"**mask**\n\nProvide an input mask to apply during user input for text inputs. The values can can be provided as an array of strings or a single string to use for all inputs in the group. The value can also be provided via the `rbl-input.mask` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
 			],

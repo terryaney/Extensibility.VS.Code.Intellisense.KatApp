@@ -52,6 +52,10 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 ## Release Notes
 
+### 1.0.4
+
+1. Updated `mask` snippet to choose between `phone` and `zip+4`.
+
 ### 1.0.3
 
 1. Sherpa KAT logo :)
