@@ -898,7 +898,7 @@
 		},
 		{
 			"name": "mask",
-			"snippet": "mask: '${1|phone,zip+4|}'",
+			"snippet": "mask: '${1|phone,zip+4,money,cc-expire|}'",
 			"documentation": [
 				"**mask**\n\nProvide an input mask to apply during user input for text inputs. The value can also be provided via the `rbl-input.mask` RBLe Framework calculation value."
 			],
@@ -910,10 +910,10 @@
 			]
 		},
 		{
-			"name": "keyboardRegex",
-			"snippet": "keyboardRegex: '${1|\\d,[A-Za-z],Custom|}'",
+			"name": "keypressRegex",
+			"snippet": "keypressRegex: '${1|\\d,[A-Za-z],Custom|}'",
 			"documentation": [
-				"**keyboardRegex**\n\nProvide an regular expression to evaluate during user input for text inputs. This is to provide a simple, first line of defense against bad input, you can supply a regular expression to inputs via the keypressRegex(s) property that simply evaluates the keyboard input while the user types. Full client/server validation should still be performed, this is simply a UI aid to guard 99% of users. i.e. `\\d` would only allow numerical input and `[A-Za-z]` would only allow character input."
+				"**keypressRegex**\n\nProvide an regular expression to evaluate during user input for text inputs. This is to provide a simple, first line of defense against bad input, you can supply a regular expression to inputs via the keypressRegex(s) property that simply evaluates the keyboard input while the user types. Full client/server validation should still be performed, this is simply a UI aid to guard 99% of users. i.e. `\\d` would only allow numerical input and `[A-Za-z]` would only allow character input."
 			],
 			"references": [
 				{
@@ -1353,7 +1353,7 @@
 		},
 		{
 			"name": "masks",
-			"snippet": "masks: '${1|phone,zip+4|}'",
+			"snippet": "masks: '${1|phone,zip+4,money,cc-expire|}'",
 			"documentation": [
 				"**mask**\n\nProvide an input mask to apply during user input for text inputs. The values can can be provided as an array of strings or a single string to use for all inputs in the group. The value can also be provided via the `rbl-input.mask` RBLe Framework calculation value where the `@id` is one of the values provided by `names`."
 			],
@@ -1365,10 +1365,10 @@
 			]
 		},
 		{
-			"name": "keyboardRegexes",
-			"snippet": "keyboardRegexes: ${1|['\\d'\\, '[A-Za-z]'],'\\d'}",
+			"name": "keypressRegexes",
+			"snippet": "keypressRegexes: ${1|['\\d'\\, '[A-Za-z]'],'\\d'}",
 			"documentation": [
-				"**keyboardRegexes**\n\nProvide a regular expression to evaluate during user input for text inputs. The values can can be provided as an array of strings or a single string to use for all inputs in the group. This is to provide a simple, first line of defense against bad input, you can supply a regular expression to inputs via the keypressRegex(s) property that simply evaluates the keyboard input while the user types. Full client/server validation should still be performed, this is simply a UI aid to guard 99% of users. i.e. `\\d` would only allow numerical input and `[A-Za-z]` would only allow character input."
+				"**keypressRegexes**\n\nProvide a regular expression to evaluate during user input for text inputs. The values can can be provided as an array of strings or a single string to use for all inputs in the group. This is to provide a simple, first line of defense against bad input, you can supply a regular expression to inputs via the keypressRegex(s) property that simply evaluates the keyboard input while the user types. Full client/server validation should still be performed, this is simply a UI aid to guard 99% of users. i.e. `\\d` would only allow numerical input and `[A-Za-z]` would only allow character input."
 			],
 			"references": [
 				{
