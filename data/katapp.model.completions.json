@@ -885,7 +885,7 @@
 		},
 		{
 			"name": "list",
-			"snippet": "list: [{key: '${1:key1}', text: '${2:text1'}, {key: '${3:key2}', text: '${4:text2}'}]",
+			"snippet": "list: [{key: '${1:key1}', text: '${2:text1}'}, {key: '${3:key2}', text: '${4:text2}'}]",
 			"documentation": [
 				"**list**\n\nProvide a list for the input if it renders a list (i.e. SELECT, type=\"radio\", etc.) when building the control. The value can also be provided via the `rbl-input.list` RBLe Framework calculation value which points to a table containing columns of `key` an `text`."
 			],
