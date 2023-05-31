@@ -1628,6 +1628,19 @@
 					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
 				}
 			]
+		},
+		{
+			"name": "clearDirty",
+			"snippet": "clearDirty: ${1|false|}",
+			"documentation": [
+				"**clearDirty**\n\nControl whether or not the application's `state.isDirty` property should be set to `false` before navigation."
+			],
+			"references": [
+				{
+					"name": "v-ka-navigate Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-navigate-model"
+				}
+			]
 		}
 	],
 	"v-ka-navigate.inputs.model": [
