@@ -5,7 +5,7 @@
 			"name": "rbl-config",
 			"description": {
 				"kind": "markdown",
-				"value": "Use the `rbl-config` tag to define the configuration for a KatApp Framework application and its RBLe calculation(s).  The `rbl-config` tag must be present and the first element of a Kaml view."
+				"value": "Use the `rbl-config` tag to define the configuration for a KatApp Framework application and its RBLe calculation(s).  The `rbl-config` tag must be present and the first element of a Kaml view.\n\nAvailable attributes are `templates` and `no-kaml-package`."
 			},
 			"references": [
 				{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
@@ -37,7 +37,7 @@
 			"name": "calc-engine",
 			"description": {
 				"kind": "markdown",
-				"value": "If one or more CalcEngines are used in Kaml View, specify each one via a `calc-engine` element."
+				"value": "If one or more CalcEngines are used in Kaml View, specify each one via a `calc-engine` element.\n\nAvailable attributes are `name`, `key`, `input-tab`, `result-tabs`, `configure-ui` and `precalcs`."
 			},
 			"references": [
 				{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
