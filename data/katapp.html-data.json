@@ -1,6 +1,111 @@
 {
     "version": 1.1,
-    "tags": [],
+    "tags": [
+		{
+			"name": "rbl-config",
+			"description": {
+				"kind": "markdown",
+				"value": "Use the `rbl-config` tag to define the configuration for a KatApp Framework application and its RBLe calculation(s).  The `rbl-config` tag must be present and the first element of a Kaml view."
+			},
+			"references": [
+				{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+			],
+			"attributes": [
+				{
+					"name": "templates",
+					"description": {
+						"kind": "markdown",
+						"value": "Comma delimitted list of Kaml Template Files required by this Kaml View. Each template is specified in Folder:FileName syntax."
+					},
+					"references": [
+						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+					]
+				},
+				{
+					"name": "no-kaml-package",
+					"description": {
+						"kind": "markdown",
+						"value": "When `true`, indicates that the Kaml View is not part of a Kaml Package and should not attempt to download *.js, *.css, or *.templates files when working in [debugResourcesDomain](#IKatAppDebugOptions) mode. By default it will attempt to download each one, and if not found, will continue properly, but report a 404 in browser console.  You can additionally provide a comma delimitted list of types to skip: `css`, `js`, `templates`."
+					},
+					"references": [
+						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+					]
+				}
+			]
+		},
+		{
+			"name": "calc-engine",
+			"description": {
+				"kind": "markdown",
+				"value": "If one or more CalcEngines are used in Kaml View, specify each one via a `calc-engine` element."
+			},
+			"references": [
+				{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+			],
+			"attributes": [
+				{
+					"name": "key",
+					"description": {
+						"kind": "markdown",
+						"value": "Optional; When more than one CalcEngine is provided (or if you need to access [Manual Results](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#imanualtabdef)), a CalcEngine is referenced by this key; usually via a `ce` property passed into a Vue directive."
+					},
+					"references": [
+						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+					]
+				},
+				{
+					"name": "name",
+					"description": {
+						"kind": "markdown",
+						"value": "The name of the CalcEngine."
+					},
+					"references": [
+						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+					]
+				},
+				{
+					"name": "input-tab",
+					"description": {
+						"kind": "markdown",
+						"value": "Optional; The name of the tab where KatApp framework should inject inputs. Default is `RBLInput`."
+					},
+					"references": [
+						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+					]
+				},
+				{
+					"name": "result-tabs",
+					"description": {
+						"kind": "markdown",
+						"value": "Optional; Comma delimitted list of result tabs to process during RBLe Calculation. When more than one result tab is provided, the tab is referenced by name; usually via a `tab` property passed into a Vue directive. Default is `RBLResult`."
+					},
+					"references": [
+						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+					]
+				},
+				{
+					"name": "configure-ui",
+					"description": {
+						"kind": "markdown",
+						"value": "Optional; Whether or not this CalcEngine should run during the Kaml View's original [Configure UI Calculation](#IKatApp.configureUICalculation). Default is `true`."
+					},
+					"references": [
+						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+					]
+				},
+				{
+					"name": "precalcs",
+					"description": {
+						"kind": "markdown",
+						"value": "Optional; Comma delimitted list of CalcEngines, i.e. `CalcEngine1,CalcEngineN` to use in a a [Precalc Pipeline](#Precalc Pipelines) for the current CalcEngine. .  By default, if only a CalcEngine name is provided, the input and the result tab with the *same* name as the tabs configured on the primary CalcEngine will be used.  To use different tabs, each PreCalc CalcEngine 'entity' becomes `CalcEngine|InputTab|ResultTab`."
+					},
+					"references": [
+						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+					]
+				}
+			]
+		}
+	],
     "globalAttributes": [
         {
             "name": "@vue:mounted",

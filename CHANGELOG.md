@@ -2,6 +2,16 @@
 
 All notable changes to the **Intellisense for KatApp Framework** extension will be documented in this file.
 
+## 1.0.5
+
+### Added
+
+1. Added attribute Intellisense for rbl-config and calc-engine elements.
+
+### Fixed
+
+1. Fixed some typos in snippet completion.
+
 ## 1.0.4
 
 ### Changed
