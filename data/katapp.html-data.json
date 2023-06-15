@@ -2,6 +2,52 @@
     "version": 1.1,
     "tags": [
 		{
+			"name": "template",
+			"description": {
+				"kind": "markdown",
+				"value": "When a Kaml file has been broken into individual files to be packaged up as a single Kaml file when requested, if a template has an associated script or css file, it can be supplied via `script`, `script.setup` (to run one time on the first render of a template), or `css` attribute values which specify the 'name' segment of the supporting file name (i.e. `script='email.script'` for a Kaml file named `Templates.Email.kaml`, the supporting file would be `Templates.Email.kaml.email.script.js`.  When providing supporting file name attributes, the `local-kaml-package` attribute must contain `template.items` key."
+			},
+			"references": [
+				{ "name": "Configuring KatApps", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" },
+				{ "name": "Template Script and Style Tags", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#template-script-and-style-tags" }
+			],
+			"attributes": [
+				{
+					"name": "script",
+					"description": {
+						"kind": "markdown",
+						"value": "Supporting file segment name that requests a javascript file with name `{View.kaml}.{script}.js` that should run every time a template is rendered."
+					},
+					"references": [
+						{ "name": "Configuring KatApps", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" },
+						{ "name": "Template Script and Style Tags", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#template-script-and-style-tags" }
+					]
+				},
+				{
+					"name": "script.setup",
+					"description": {
+						"kind": "markdown",
+						"value": "Supporting file segment name that requests a javascript file with name `{View.kaml}.{script.setup}.js` that should run one time on the initial render of a template."
+					},
+					"references": [
+						{ "name": "Configuring KatApps", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" },
+						{ "name": "Template Script and Style Tags", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#template-script-and-style-tags" }
+					]
+				},
+				{
+					"name": "css",
+					"description": {
+						"kind": "markdown",
+						"value": "Supporting file segment name that requests a css file with name `{View.kaml}.{css}.css` that should run one time on the initial render of a template."
+					},
+					"references": [
+						{ "name": "Configuring KatApps", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" },
+						{ "name": "Template Script and Style Tags", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#template-script-and-style-tags" }
+					]
+				}
+			]
+		},
+		{
 			"name": "rbl-config",
 			"description": {
 				"kind": "markdown",
@@ -22,10 +68,10 @@
 					]
 				},
 				{
-					"name": "no-kaml-package",
+					"name": "local-kaml-package",
 					"description": {
 						"kind": "markdown",
-						"value": "When `true`, indicates that the Kaml View is not part of a Kaml Package and should not attempt to download *.js, *.css, or *.templates files when working in [debugResourcesDomain](#IKatAppDebugOptions) mode. By default it will attempt to download each one, and if not found, will continue properly, but report a 404 in browser console.  You can additionally provide a comma delimitted list of types to skip: `css`, `js`, `templates`."
+						"value": "When a Kaml file has been broken into individual files to be packaged up as a single Kaml file when requested, if a developer is working in [debugResourcesDomain](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#IKatAppDebugOptions) mode, to minimize the noise of 404 errors present in the browser console, the supporting file types to process must be specified as a comma delimitted list.  The available types are `js` (file for Kaml javascript), `css` (file for Kaml CSS), `templates` (file for Kaml templates), or `js.templates` (process all templates in file looking for `script` or `script.setup` attributes which point to supporting file)."
 					},
 					"references": [
 						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
