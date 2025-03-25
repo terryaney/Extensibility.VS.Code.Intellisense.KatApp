@@ -83,7 +83,7 @@
 			"name": "calc-engine",
 			"description": {
 				"kind": "markdown",
-				"value": "If one or more CalcEngines are used in Kaml View, specify each one via a `calc-engine` element.\n\nAvailable attributes are `name`, `key`, `input-tab`, `result-tabs`, `configure-ui` and `precalcs`."
+				"value": "If one or more CalcEngines are used in Kaml View, specify each one via a `calc-engine` element.\n\nAvailable attributes are `name`, `key`, `input-tab`, `result-tabs`, and `configure-ui`.  Optional `pipeline` child elements are supported as well."
 			},
 			"references": [
 				{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
@@ -138,12 +138,44 @@
 					"references": [
 						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
 					]
-				},
+				}
+			]
+		},
+		{
+			"name": "pipeline",
+			"description": {
+				"kind": "markdown",
+				"value": "If one or more pipeline CalcEngines are used during a `calc-engine` calculation, specify each one via a `pipeline` element.\n\nAvailable attributes are `name`, `input-tab`, and `result-tabs`."
+			},
+			"references": [
+				{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+			],
+			"attributes": [
 				{
-					"name": "precalcs",
+					"name": "name",
 					"description": {
 						"kind": "markdown",
-						"value": "Optional; Comma delimitted list of CalcEngines, i.e. `CalcEngine1,CalcEngineN` to use in a a [Precalc Pipeline](#Precalc Pipelines) for the current CalcEngine. .  By default, if only a CalcEngine name is provided, the input and the result tab with the *same* name as the tabs configured on the primary CalcEngine will be used.  To use different tabs, each PreCalc CalcEngine 'entity' becomes `CalcEngine|InputTab|ResultTab`."
+						"value": "The name of the CalcEngine."
+					},
+					"references": [
+						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+					]
+				},
+				{
+					"name": "input-tab",
+					"description": {
+						"kind": "markdown",
+						"value": "Optional; The name of the tab where KatApp framework should inject inputs. By default, the input tab of the primary CalcEngine will be used."
+					},
+					"references": [
+						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }
+					]
+				},
+				{
+					"name": "result-tab",
+					"description": {
+						"kind": "markdown",
+						"value": "Optional; Name of result tab to process during RBLe Calculation. By default, the name of the first result tab of the primary CalcEngine will be used."
 					},
 					"references": [
 						{ "name": "KatApp Documentation", "url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files" }

@@ -57,6 +57,7 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 ## Previous Versions
 
+1. [1.0.5](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.5.vsix)
 1. [1.0.4](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.4.vsix)
 1. [1.0.3](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.3.vsix)
 1. [1.0.2](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.2.vsix)

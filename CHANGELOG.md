@@ -2,6 +2,13 @@
 
 All notable changes to the **Intellisense for KatApp Framework** extension will be documented in this file.
 
+## 1.0.6
+
+### Added
+
+1. Added attribute Intellisense for pipeline elements.
+
+
 ## 1.0.5
 
 ### Added
