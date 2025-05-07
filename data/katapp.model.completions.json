@@ -45,6 +45,115 @@
 			]
 		}
 	],
+	"IChartBreakpoints": [
+		{
+			"name": "xs",
+			"snippet": "xs: { }",
+			"documentation": [
+				"**xs**\n\nIf provided, options used to render the chart in Bootstrap xs breakpoint."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "sm",
+			"snippet": "sm: { }",
+			"documentation": [
+				"**sm**\n\nIf provided, options used to render the chart in Bootstrap sm breakpoint."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "md",
+			"snippet": "md: { }",
+			"documentation": [
+				"**md**\n\nIf provided, options used to render the chart in Bootstrap md breakpoint."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "lg",
+			"snippet": "lg: { }",
+			"documentation": [
+				"**lg**\n\nIf provided, options used to render the chart in Bootstrap lg breakpoint."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "xl",
+			"snippet": "xl: { }",
+			"documentation": [
+				"**xl**\n\nIf provided, options used to render the chart in Bootstrap xl breakpoint."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		}
+	],
+	"IChartBreakpoint": [
+		{
+			"name": "maxHeight",
+			"snippet": "maxHeight: ${1:350}",
+			"documentation": [
+				"**maxHeight**\n\nIf provided, the charts height will be restricted to the specified number of px in given breakpoint.  Default is model.maxHeight."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"snippet": "categories: ${1:4}",
+			"documentation": [
+				"**categories**\n\nThe number of categories to show per chart (multiple charts will be rendered to display all categories with equal scaling).  Default is all categories."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "fontMultiplier",
+			"snippet": "fontMultiplier: ${1:1.6}",
+			"documentation": [
+				"**fontMultiplier**\n\nIf provided, the multiplier to use on all chart fonts.  Default is ce.fontMultiplier ?? 1.0.",
+				"This is useful when there is a wide aspect ratio for the chart and fonts become too small to read in small breakpoints."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		}
+	],
 	"IInputCss": [
 		{
 			"name": "container",
@@ -2031,7 +2140,7 @@
 		},
 		{
 			"name": "calculateOnConfirm",
-			"snippet": "calculateOnConfirm: ${1|true,false,{ iInputName: 'value'|}",
+			"snippet": "calculateOnConfirm: ${1|true,false,{ iInputName: 'value' }|}",
 			"documentation": [
 				"**calculateOnConfirm**\n\nWhen a modal application is 'confirmed', using the `calculateOnConfirm` property can instruct the KatApp Framework to automatically run a RBLe Framework calculation.",
 				"Setting this property to `true` or providing a `ICalculationInputs` object will trigger the automatic calculation."
@@ -2417,6 +2526,271 @@
 				{
 					"name": "v-ka-highchart Model",
 					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-highchart-model"
+				}
+			]
+		}
+	],
+	"v-ka-chart": [
+		{
+			"name": "Table Name",
+			"snippet": "${1:tableName}",
+			"documentation": [
+				"**Table Name**\n\nSimply provide the string literal partial name of the RBLe Framework result tables to process."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "Table with maxHeight",
+			"snippet": "{ data: '${1:tableName}', maxHeight: ${2:350} }",
+			"documentation": [
+				"**Table with maxHeight**\n\nProvide data name and maximum allowed height to generate the chart."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "No Legend",
+			"snippet": "{ data: '${1:tableName}', mode: 'chart'${2:, legendItemSelector: '${3:div.legend-hover}'} }",
+			"documentation": [
+				"**No Legend**\n\nDo not render a legend automatically."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "Legend Only",
+			"snippet": "{ data: '${1:tableName}', mode: 'legend' }",
+			"documentation": [
+				"**Legend Only**\n\nOnly render a legend."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "{} Model",
+			"snippet": "{\n\tdata: '${1:dataName}',${2:\n\tbreakpoints: { xs: '${3:optionsName}' }, }\n\tmaxHeight: ${4:350}${5:,\n\tce: '${6:ce-key}'}${7:,\n\ttab: '${8:tab-name}'}\n}",
+			"documentation": [
+				"**{} Model**\n\nProvide data name and other model properties used to generate the chart."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		}
+	],
+	"v-ka-chart.model": [
+		{
+			"name": "data",
+			"snippet": "data: '${1:dataName}'",
+			"documentation": [
+				"**data**\n\nThe name of the RBLe Framework result table providing the 'configuration' and 'data' for the chart."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "mode",
+			"snippet": "mode: ${1|chart,legend|}",
+			"documentation": [
+				"**mode**\n\nIf excluded, the chart and legend will both render (based on CalcEngine configuration).  If provided, manually override CalcEngine specify which component to render."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "maxHeight",
+			"snippet": "maxHeight: ${1:350}",
+			"documentation": [
+				"**maxHeight**\n\nIf provided, the charts height will be restricted to the specified number of px."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "legendItemSelector",
+			"snippet": "legendItemSelector: ${1:div.legend-hover}",
+			"documentation": [
+				"**legendItemSelector**\n\nIf provided, rendered legend needs to have .ka-chart-legend-{name.toLower()} class.  Then each item needs to have ka-chart-highlight-key=\"{series.name}\" attribute.",
+				"Each 'text' element containing info that should be opaque needs to be provided via selector (i.e. div.legend-hover)."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "from",
+			"snippet": "from: ${1:0}",
+			"documentation": [
+				"**from**\n\nIf provided, the chart will be sliced to only show the range of categories.  If not provided, all categories will be shown.",
+				"This is useful when lots of categories are available and client will render multiple charts with different ranges to display 'all' data (or to change the range of data shown without the need of a re-calculation)",
+				"**Note**: `from` and `to` must be provided together."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "to",
+			"snippet": "to: ${1:10}",
+			"documentation": [
+				"**to**\n\nIf provided, the chart will be sliced to only show the range of categories.  If not provided, all categories will be shown.",
+				"This is useful when lots of categories are available and client will render multiple charts with different ranges to display 'all' data (or to change the range of data shown without the need of a re-calculation)",
+				"**Note**: `from` and `to` must be provided together."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "breakpoints",
+			"snippet": "breakpoints: { xs: { } }",
+			"documentation": [
+				"**breakpoints**\n\nWhen charts need to render a different way based on Bootstrap breakpoints (xs, sm, md, lg, xl), provide the name of the breakpoint and the options to use for that breakpoint."
+			],
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "ce",
+			"snippet": "ce: '${1:ceKey}'",
+			"documentation": [
+				"**ce**\n\nProvide the CalcEngine key if all the values that automatically pull from RBLe Framework calculation values should use a CalcEngine different from the default CalcEngine."
+			],
+			"references": [
+				{
+					"name": "CalcEngine Configuration",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files"
+				},
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		},
+		{
+			"name": "tab",
+			"snippet": "tab: '${1:tabName}'",
+			"documentation": [
+				"**tab**\n\nProvide the CalcEngine result tab name if all the values that automatically pull from RBLe Framework calculation values should use a tab name different from the default tab specified for the associated CalcEngine."
+			],
+			"references": [
+				{
+					"name": "CalcEngine Configuration",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#configuring-calcengines-and-template-files"
+				},
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		}
+	],
+	"v-ka-chart.breakpoints.model": [
+		{
+			"globalName": "IChartBreakpoints",
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		}
+	],
+	"v-ka-chart.breakpoints.xs.model": [
+		{
+			"globalName": "IChartBreakpoint",
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		}
+	],
+	"v-ka-chart.breakpoints.sm.model": [
+		{
+			"globalName": "IChartBreakpoint",
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		}
+	],
+	"v-ka-chart.breakpoints.md.model": [
+		{
+			"globalName": "IChartBreakpoint",
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		}
+	],
+	"v-ka-chart.breakpoints.lg.model": [
+		{
+			"globalName": "IChartBreakpoint",
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
+				}
+			]
+		}
+	],
+	"v-ka-chart.breakpoints.xl.model": [
+		{
+			"globalName": "IChartBreakpoint",
+			"references": [
+				{
+					"name": "v-ka-chart Model",
+					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
 				}
 			]
 		}

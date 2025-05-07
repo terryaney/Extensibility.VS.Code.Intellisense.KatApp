@@ -2,12 +2,17 @@
 
 All notable changes to the **Intellisense for KatApp Framework** extension will be documented in this file.
 
+## 1.0.7
+
+### Added
+
+1. `v-ka-chart` Directive Models - Suggestions for model properties.
+
 ## 1.0.6
 
 ### Added
 
 1. Added attribute Intellisense for pipeline elements.
-
 
 ## 1.0.5
 

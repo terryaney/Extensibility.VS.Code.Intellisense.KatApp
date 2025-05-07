@@ -130,12 +130,14 @@ export function activate(context: vscode.ExtensionContext) {
 				case "v-ka-template":
 				case "v-ka-api":
 				case "v-ka-modal":
+				case "v-ka-chart":
 				case "v-ka-app": {
 					let inputProperties = usedProperties.map(p => p.name);
 					completionName = !isModel ? currentAttribute : `${currentAttribute}.model`;
 
 					const modelContainerProperties = [
 						"inputs", "help", "helps", "css", "events",
+						"breakpoints.xs", "breakpoints.sm", "breakpoints.md", "breakpoints.lg", "breakpoints.xl", "breakpoints", 
 						"confirm.labels", "confirm.css", "confirm",
 						"source", "calculationInputs", "calculateOnSuccess", "calculateOnConfirm", "apiParameters"
 					];
