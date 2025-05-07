@@ -2,6 +2,8 @@
 
 A VS Code extension to provide intellisense and code completion suggestions for [KatApp Framework](https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md) features when editing `.kaml` files.  To get full syntax highlighting within the KatApp/Vue directives, the [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) extension is suggested.
 
+[Download the extension](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.7.vsix).
+
 ## Features
 
 1. Hovering over known KatApp and Vue directives providing more context help and links to additionall documentation.
@@ -25,7 +27,7 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 ## Getting Started
 
-1. [Download the extension](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.6.vsix).
+1. [Download the extension](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.7.vsix).
 1. Install the extension by pressing `CTRL+SHIFT+P` to bring up VS Code command pallette.  Type `VSIX` and choose `Extensions: Install from VSIX...`.
 
 ![Install from VSIX](images/install.png)
