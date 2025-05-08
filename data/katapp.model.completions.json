@@ -2532,28 +2532,15 @@
 	],
 	"v-ka-chart": [
 		{
-			"name": "Data Name",
+			"name": "Table Name",
 			"snippet": "${1:tableName}",
 			"documentation": [
-				"**Data Name**\n\nSimply provide the string literal partial name of the RBLe Framework result tables to process."
+				"**Table Name**\n\nSimply provide the string literal partial name of the RBLe Framework result tables to process."
 			],
 			"references": [
 				{
 					"name": "v-ka-chart Model",
 					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-chart-model"
-				}
-			]
-		},
-		{
-			"name": "Data/Options Names",
-			"snippet": "${1:dataName}.${2:optionName}",
-			"documentation": [
-				"**Data/Options**\n\nSimply provide the `.` delimitted string literal that contains the partial names of the 'data' and 'options' result tables to process."
-			],
-			"references": [
-				{
-					"name": "v-ka-highchart",
-					"url": "https://github.com/terryaney/Documentation.Nexgen/blob/main/KatApp.md#v-ka-highchart"
 				}
 			]
 		},
