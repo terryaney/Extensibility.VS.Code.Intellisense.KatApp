@@ -1,6 +1,6 @@
 {
-  "name": "kat-vs-code-intellisense-katapp",
-  "displayName": "KAT - Intellisense for KatApp Framework",
+  "name": "kat-intellisense-katapp",
+  "displayName": "KAT Intellisense for KatApp Framework",
   "publisher": "conduent-kat-team",
   "author": {
     "name": "Terry Aney",
@@ -10,9 +10,9 @@
   "license": "UNLICENSED",
   "description": "A VS Code extension to provide intellisense and code completion suggestions for KatApp Framework features when editing `.kaml` files.",
   "repository": {
-	"url": "https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp"
+    "url": "https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp"
   },
-  "version": "1.0.7",
+  "version": "1.0.8",
   "engines": {
     "vscode": "^1.76.0"
   },
@@ -31,7 +31,9 @@
     }
   },
   "scripts": {
+    "prepackage": "npm version patch --no-git-tag-version",
     "package": "vsce package --out dist && git add dist/*.vsix -f",
+    "postpackage": "node scripts/update-readme.js && git add README.md package.json",
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
@@ -53,6 +55,6 @@
   },
   "dependencies": {
     "vscode-html-languageservice": "^5.0.4",
-	"typescript": "^4.4.3"
+    "typescript": "^4.4.3"
   }
 }

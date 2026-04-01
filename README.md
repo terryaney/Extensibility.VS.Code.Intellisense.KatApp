@@ -27,12 +27,12 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 ## Getting Started
 
-1. [Download the extension](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.7.vsix).
+1. [Download the extension](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/kat-intellisense-katapp-1.0.7.vsix).
 1. Install the extension by pressing `CTRL+SHIFT+P` to bring up VS Code command pallette.  Type `VSIX` and choose `Extensions: Install from VSIX...`.
 
 ![Install from VSIX](images/install.png)
 
-3. Browse to the `VS.Code.Intellisense.KatApp.vsix` location and select it.
+3. Browse to the `kat-intellisense-katapp-1.0.7.vsix` location and select it.
 4. Open a `.kaml` file and enjoy.
 
 ## Known Issues
@@ -59,8 +59,9 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 
 ## Previous Versions
 
-1. [1.0.5](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.5.vsix)
-1. [1.0.4](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.4.vsix)
-1. [1.0.3](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.3.vsix)
-1. [1.0.2](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.2.vsix)
-1. [1.0.1](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/vs-code-intellisense-katapp-1.0.1.vsix)
+1. [1.0.6](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/kat-intellisense-katapp-1.0.6.vsix)
+1. [1.0.5](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/kat-intellisense-katapp-1.0.5.vsix)
+1. [1.0.4](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/kat-intellisense-katapp-1.0.4.vsix)
+1. [1.0.3](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/kat-intellisense-katapp-1.0.3.vsix)
+1. [1.0.2](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/kat-intellisense-katapp-1.0.2.vsix)
+1. [1.0.1](https://github.com/terryaney/Extensibility.VS.Code.Intellisense.KatApp/raw/main/dist/kat-intellisense-katapp-1.0.1.vsix)
