@@ -35,6 +35,8 @@ A VS Code extension to provide intellisense and code completion suggestions for 
 3. Browse to the `kat-intellisense-katapp-1.0.7.vsix` location and select it.
 4. Open a `.kaml` file and enjoy.
 
+Install [previous versions](#previous-versions) of the extension if needed.
+
 ## Known Issues
 
 1. Code completion suggestions are enabled when inside 'property values' (i.e. name: '{typing in here will bring up suggestions}')
@@ -51,11 +53,6 @@ A VS Code extension to provide intellisense and code completion suggestions for 
     1. How to tell which scope 'type' is in use?
     1. How to detect when suggestions should be made (i.e. pop up on any 'expression item' (:attr=""))?
     1. When inside a v-for, able make scope work?
-
-## Release Notes
-
-
-**Enjoy!**
 
 ## Previous Versions
 
